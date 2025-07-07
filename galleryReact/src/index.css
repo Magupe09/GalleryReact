@@ -1,0 +1,54 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap'); /* Ejemplo de fuente, puedes cambiarla */
+
+:root {
+  /* Aquí definiremos nuestras variables de color y tamaño de fuente más adelante */
+  --color-primary: #007bff;
+  --color-background: #1a1a1a;
+  --color-text: #ffffff;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Asegura que ocupe al menos el 100% del viewport */
+  overflow-x: hidden; /* Evita scroll horizontal no deseado */
+  font-family: 'Inter', sans-serif; /* Aplica la fuente global */
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box; /* Un reset básico para el box model */
+}
+
+/* Estilos básicos para el contenedor principal de la app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Puedes agregar más estilos globales aquí */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
