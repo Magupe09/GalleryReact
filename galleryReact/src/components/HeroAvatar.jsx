@@ -1,25 +1,25 @@
 // src/components/HeroAvatar/HeroAvatar.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+
 // Importa tu imagen de avatar
-import myAvatarImage from '../assets/avatar.png'; // <<< Ruta corregida
+import myAvatarImage from '../assets/AvatarPortafolio.png'; // <<< Asegúrate de que esta ruta y nombre de archivo sean correctos
 
 function HeroAvatar({ className = '' }) {
   return (
+    // Usa la clase pasada por props, que ahora vendrá del módulo CSS de App.jsx
     <motion.div
       className={className}
-      // Aquí aplicaremos animaciones de Framer Motion más adelante
-      // Por ahora, solo es una imagen
-      initial={{ opacity: 0, x: -100 }} // Que aparezca desde la izquierda
-      animate={{ opacity: 1, x: 0 }}   // Y se deslice a su posición
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <img
         src={myAvatarImage}
         alt="Tu Avatar Profesional"
         style={{
-          maxWidth: '100%', // Asegura que la imagen no se desborde
-          height: 'auto',
+          maxWidth: '100%',
+          height: '500px',
           display: 'block'
         }}
       />

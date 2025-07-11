@@ -1,0 +1,18 @@
+
+.heroTitle {
+    font-size: 4em; /* Ajusta el tamaño */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.2em;
+    color: #fff; /* Asegúrate de que el color contraste con tu fondo */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  .heroSubtitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    color: #ccc;
+    max-width: 80%; /* Para que el texto no sea demasiado largo */
+  }
+  

@@ -1,0 +1,15 @@
+/* src/App.module.css */
+
+.mainScrollContainer {
+    /* La altura total de la página para permitir el scroll */
+    /* Ajusta esto según el número total de secciones que definas */
+    height: 300vh; /* 3 secciones * 100vh = 300vh */
+    position: relative; /* Necesario para que 'position: sticky' funcione en los hijos */
+  }
+  
+  /* Puedes añadir aquí estilos para las secciones si los necesitas más adelante */
+  /* Por ejemplo, si las secciones tienen un padding o margin común */
+  /* .section {
+    padding: 20px;
+  } */
+  
