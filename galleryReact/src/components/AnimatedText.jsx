@@ -19,7 +19,7 @@ function AnimatedText({ text, type = 'word', delay = 0.05, className = '' }) {
     hidden: {
       opacity: 0,
       y: 20,
-      scale: 0.8,
+      scale: 1,
     },
     visible: {
       opacity: 1,
@@ -27,7 +27,7 @@ function AnimatedText({ text, type = 'word', delay = 0.05, className = '' }) {
       scale: 1,
       transition: {
         type: 'spring',
-        damping: 12,
+        damping: 15,
         stiffness: 200,
       },
     },
