@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import styles from './AnimatedText.module.css'; // Importa el módulo CSS
+//import styles from './AnimatedText.module.css'; // Importa el módulo CSS
 
 function AnimatedText({ text, type = 'word', delay = 0.05, className = '' }) {
   const textArray = type === 'word' ? text.split(' ') : text.split('');

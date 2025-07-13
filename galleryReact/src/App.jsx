@@ -24,7 +24,8 @@ function App() {
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'stretch',
+        
         justifyContent: 'center',
         padding: '20px',
         // --- position: sticky y top: 0 se mantienen comentados para asegurar el scroll ---
@@ -36,7 +37,7 @@ function App() {
       }}>
        
         {/* Mitad derecha para el Perfil y Texto */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'end', paddingLeft: '40px' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start', paddingLeft: '40px', paddingTop: '60px'}}>
           {/* Pasa las clases del módulo CSS a los componentes AnimatedText */}
           <AnimatedText
             text="MagupeDev"

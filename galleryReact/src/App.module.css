@@ -6,6 +6,25 @@
     height: 300vh; /* 3 secciones * 100vh = 300vh */
     position: relative; /* Necesario para que 'position: sticky' funcione en los hijos */
   }
+
+
+  /* src/App.module.css */
+.heroTitle {
+  font-size: 3em;
+  font-weight: 700;
+  text-align: start;
+  margin-bottom: 0.2em;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: start;
+  color: #ccc;
+  max-width: 80%;
+}
   
   /* Puedes añadir aquí estilos para las secciones si los necesitas más adelante */
   /* Por ejemplo, si las secciones tienen un padding o margin común */
