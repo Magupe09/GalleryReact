@@ -1,0 +1,35 @@
+/* src/components/SkillAtoms.module.css */
+
+.skillAtomsContainer {
+    /* Este es el div que envuelve todo el componente SkillAtoms en App.jsx */
+    /* Puedes ajustar su ancho máximo o margen si es necesario */
+    max-width: 500px; /* Ejemplo: para que no ocupe toda la mitad derecha */
+    position: relative; /* Importante para posicionar el .orbitSystem dentro de él */
+    height: 300px; /* Dale una altura para que el .orbitSystem tenga espacio */
+    width: 300px; /* Dale un ancho para que el .orbitSystem tenga espacio */
+    display: flex; /* Para centrar el orbitSystem dentro de este contenedor */
+    justify-content: center;
+    align-items: center;
+    /* border: 1px dashed red; /* Temporal: para ver los límites de este contenedor */
+  }
+  
+  /* --- NUEVOS ESTILOS PARA EL CONTENEDOR DEL SISTEMA DE ÓRBITAS --- */
+  .orbitSystem {
+    position: relative; /* Los logos se posicionarán absolutamente dentro de este */
+    width: 200px; /* El tamaño de la "órbita" principal */
+    height: 200px; /* Debe ser un círculo para órbitas uniformes */
+    /* border: 1px solid blue; /* Temporal: para ver el centro de rotación */
+    /* El transform-origin por defecto es el centro (50% 50%), lo cual es lo que queremos */
+  }
+  
+  /* Estilos para cada logo individual */
+  .skillLogo {
+    width: 50px; /* Tamaño de cada logo */
+    height: 50px;
+    border-radius: 50%; /* Para hacer los logos circulares si lo deseas */
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4); /* Un brillo sutil */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para logos transparentes */
+    padding: 5px; /* Pequeño padding interno */
+  }
+  

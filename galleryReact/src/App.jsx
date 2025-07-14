@@ -7,6 +7,7 @@ import styles from './App.module.css';
 // Importaciones de otros componentes
 import AnimatedText from './components/AnimatedText';
 import HeroAvatar from './components/HeroAvatar';
+import SkillAtoms from './components/SkillAtoms';
 
 function App() {
   return (
@@ -52,6 +53,8 @@ function App() {
             delay={0.08}
           />
           {/* Aquí irá la animación de los átomos de skills más adelante */}
+           {/* ¡Aquí va la animación de los átomos de skills! */}
+           <SkillAtoms className={styles.skillAtoms} />
         </div>
          {/* Mitad izquierda para el Avatar */}
          <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

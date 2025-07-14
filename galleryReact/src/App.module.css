@@ -25,6 +25,16 @@
   color: #ccc;
   max-width: 80%;
 }
+
+
+/* --- NUEVA CLASE PARA EL CONTENEDOR DE SKILLS --- */
+.skillAtoms {
+  /* Puedes ajustar el ancho máximo para que no ocupe toda la mitad derecha */
+  max-width: 500px;
+  /* Puedes añadir un margen superior si el gap no es suficiente */
+  /* margin-top: 20px; */
+}
+
   
   /* Puedes añadir aquí estilos para las secciones si los necesitas más adelante */
   /* Por ejemplo, si las secciones tienen un padding o margin común */
