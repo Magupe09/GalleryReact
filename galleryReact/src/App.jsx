@@ -27,10 +27,10 @@ function App() {
         flexDirection: 'row',
         alignItems: 'stretch',
         
-        justifyContent: 'center',
-        padding: '20px',
+        justifyContent: 'space-between',
+       // padding: '20px',
         // --- position: sticky y top: 0 se mantienen comentados para asegurar el scroll ---
-        // position: 'sticky',
+        position: 'relative',
         // top: 0,
         // ----------------------------------------------------------------------------------
         backgroundColor: '#1a1a1a', // Color de fondo para la primera sección
@@ -38,7 +38,7 @@ function App() {
       }}>
        
         {/* Mitad derecha para el Perfil y Texto */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start', paddingLeft: '40px', paddingTop: '60px'}}>
+        <div style={{ flex: '1 0 50%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', paddingLeft: '40px', paddingTop: '60px'}}>
           {/* Pasa las clases del módulo CSS a los componentes AnimatedText */}
           <AnimatedText
             text="MagupeDev"
@@ -52,15 +52,16 @@ function App() {
             type="word"
             delay={0.08}
           />
-          {/* Aquí irá la animación de los átomos de skills más adelante */}
-           {/* ¡Aquí va la animación de los átomos de skills! */}
-           <SkillAtoms className={styles.skillAtoms} />
         </div>
          {/* Mitad izquierda para el Avatar */}
          <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           {/* Pasa la clase del módulo CSS al componente HeroAvatar */}
           <HeroAvatar className={styles.heroAvatar} />
         </div>
+        
+          {/* Aquí irá la animación de los átomos de skills más adelante */}
+           {/* ¡Aquí va la animación de los átomos de skills! */}
+           <SkillAtoms className={styles.skillAtomsAbsolute} />
 
       </section>
 
