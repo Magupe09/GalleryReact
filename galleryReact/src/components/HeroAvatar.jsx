@@ -10,7 +10,7 @@ function HeroAvatar({ className = '' }) {
     // Usa la clase pasada por props, que ahora vendrá del módulo CSS de App.jsx
     <motion.div
       className={className}
-      initial={{ opacity: 0, x: -400 }}
+      initial={{ opacity: 0, x: -500 }}
       animate={{ opacity: 1, x: -100 }}
       transition={{ duration: 3, ease: "easeOut" }}
     >

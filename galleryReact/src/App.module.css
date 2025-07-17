@@ -54,8 +54,8 @@
   /* Estos valores son una ESTIMACIÓN INICIAL. Necesitarás ajustarlos. */
   /* 'left' lo moverá horizontalmente. 'top' lo moverá verticalmente. */
   /* Puedes usar 'vw'/'vh' para que sea responsivo, o 'px' para precisión. */
-  right: 37vw;   /* Ejemplo: 30% del ancho del viewport desde la izquierda */
-  top: 30vh;    /* Ejemplo: 40% de la altura del viewport desde arriba */
+  right: -40vw;   /* Ejemplo: 30% del ancho del viewport desde la izquierda */
+  top: -48vh;    /* Ejemplo: 40% de la altura del viewport desde arriba */
   /* Puedes añadir un transform para centrar el elemento si lo deseas,
      pero con left/top y ajuste visual, a veces no es necesario al inicio. */
   transform: translate(-50%, -50%); /* Centra el elemento en el punto left/top */

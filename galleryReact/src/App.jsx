@@ -24,7 +24,7 @@ function App() {
         height: '100vh',
         width: '100%',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'stretch',
         
         justifyContent: 'space-between',
@@ -38,7 +38,7 @@ function App() {
       }}>
        
         {/* Mitad derecha para el Perfil y Texto */}
-        <div style={{ flex: '1 0 50%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', paddingLeft: '40px', paddingTop: '60px'}}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingLeft: '40px', paddingTop: '60px'}}>
           {/* Pasa las clases del módulo CSS a los componentes AnimatedText */}
           <AnimatedText
             text="MagupeDev"
@@ -54,7 +54,7 @@ function App() {
           />
         </div>
          {/* Mitad izquierda para el Avatar */}
-         <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+         <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', padding: '10px 200px' }}>
           {/* Pasa la clase del módulo CSS al componente HeroAvatar */}
           <HeroAvatar className={styles.heroAvatar} />
         </div>
