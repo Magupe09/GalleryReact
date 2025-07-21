@@ -1,66 +1,88 @@
+
+
 /* src/App.module.css */
 
 .mainScrollContainer {
-    /* La altura total de la página para permitir el scroll */
-    /* Ajusta esto según el número total de secciones que definas */
-    height: 300vh; /* 3 secciones * 100vh = 300vh */
-    position: relative; /* Necesario para que 'position: sticky' funcione en los hijos */
-  }
+  height: 300vh;
+  position: relative;
+}
 
+/* --- ESTILOS PARA EL TÍTULO Y SUBTÍTULO VERTICALES --- */
+.verticalTitleWrapper,
+.verticalSubtitleWrapper {
+  position: relative; /* Necesario para la rotación con transform-origin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px dashed yellow; /* Para depurar */
+}
 
-  /* src/App.module.css */
 .heroTitle {
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 700;
-  text-align: start;
-  margin-bottom: 0.2em;
   color: #fff;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  /* Rotación y ajuste para el texto vertical */
+  transform: rotate(-90deg); /* Rota el texto 90 grados en sentido antihorario */
+  transform-origin: center; /* Asegura que la rotación sea desde el centro del texto */
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  position: absolute; /* Permite posicionar libremente después de la rotación */
+  left: 0; /* Ajusta esto para mover el texto rotado horizontalmente */
+  /* Ajusta 'top' o 'bottom' para posicionarlo verticalmente en su wrapper */
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg); /* Centra verticalmente y rota */
 }
 
 .heroSubtitle {
   font-size: 1.5em;
   font-weight: 300;
-  text-align: start;
   color: #ccc;
-  max-width: 80%;
+  max-width: 80%; /* Asegúrate de que esto siga siendo relevante para el texto rotado */
+  /* Rotación y ajuste para el texto vertical */
+  transform: rotate(-90deg); /* Rota el texto 90 grados en sentido antihorario */
+  transform-origin: center;
+  white-space: nowrap;
+  position: absolute; /* Permite posicionar libremente después de la rotación */
+  left: 0; /* Ajusta esto para mover el texto rotado horizontalmente */
+  /* Ajusta 'top' o 'bottom' para posicionarlo verticalmente en su wrapper */
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg); /* Centra verticalmente y rota */
 }
 
-
-/* --- NUEVA CLASE PARA EL CONTENEDOR DE SKILLS --- */
-.skillAtoms {
-  /* Puedes ajustar el ancho máximo para que no ocupe toda la mitad derecha */
-  max-width: 500px;
-  /* Puedes añadir un margen superior si el gap no es suficiente */
-  /* margin-top: 20px; */
+/* Ajustes para el contenedor del título y subtítulo para que no se superpongan */
+.verticalTitleWrapper {
+  height: 100px; /* Dale una altura para contener el texto rotado */
+  width: 100px; /* Ajusta el ancho para el texto rotado */
+  margin-bottom: 20px; /* Espacio entre título y subtítulo */
 }
 
-  
-  /* Puedes añadir aquí estilos para las secciones si los necesitas más adelante */
-  /* Por ejemplo, si las secciones tienen un padding o margin común */
-  /* .section {
-    padding: 20px;
-  } */
+.verticalSubtitleWrapper {
+  height: 80px; /* Altura para el subtítulo rotado */
+  width: 80px; /* Ancho para el subtítulo rotado */
+}
+/* --------------------------------------------------------------- */
 
-  
-/* La clase .skillAtoms ya no se usará para posicionamiento absoluto */
-/* .skillAtoms {
-  max-width: 500px;
-} */
+.heroDescription {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-top: 1em;
+  max-width: 70%;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
 
-/* --- ¡NUEVA CLASE PARA POSICIONAMIENTO ABSOLUTO DE SKILLATOMS! --- */
+.heroAvatar {
+  max-width: 450px;
+}
+
+/* --- AJUSTE PARA SKILLATOMS EN LA NUEVA COLUMNA DERECHA --- */
 .skillAtomsAbsolute {
   position: absolute;
-  /* Estos valores son una ESTIMACIÓN INICIAL. Necesitarás ajustarlos. */
-  /* 'left' lo moverá horizontalmente. 'top' lo moverá verticalmente. */
-  /* Puedes usar 'vw'/'vh' para que sea responsivo, o 'px' para precisión. */
-  right: 50vw;   /* Ejemplo: 30% del ancho del viewport desde la izquierda */
-  top: -10vh;    /* Ejemplo: 40% de la altura del viewport desde arriba */
-  /* Puedes añadir un transform para centrar el elemento si lo deseas,
-     pero con left/top y ajuste visual, a veces no es necesario al inicio. */
+  /* Estos valores son relativos al CONTENEDOR DE LA COLUMNA DERECHA. */
+  /* Ajusta estos valores con el inspector para un posicionamiento perfecto sobre el avatar */
+  right: 400px;   /* Centra horizontalmente en la columna derecha */
+  top: 5%;    /* Centra verticalmente en la columna derecha */
   transform: translate(-50%, -50%); /* Centra el elemento en el punto left/top */
-  z-index: 15; /* Asegura que esté por encima del avatar y el texto */
+  z-index: 15;
 }
-/* ----------------------------------------------------------------- */
-
-  

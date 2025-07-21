@@ -9,71 +9,88 @@ import styles from './App.module.css';
 import AnimatedText from './components/AnimatedText';
 import HeroAvatar from './components/HeroAvatar';
 import SkillAtoms from './components/SkillAtoms';
+import CyclingText from './components/CyclingText';
 
 function App() {
+  const manifestoPhrases = [
+    "Transformo ideas en código.",
+    "Diseño experiencias intuitivas.",
+    "La lógica se encuentra con el arte.",
+    "Construyendo el futuro digital."
+  ];
   return (
-    // Usa la clase del módulo CSS para el contenedor principal
     <div className={styles.mainScrollContainer} style={{
-      // Las propiedades de altura y posición se mantienen aquí
-      // ya que son específicas del layout del scroll
       height: '300vh',
       position: 'relative',
     }}>
 
-      {/* Primera Sección: Hero Section (ahora en columna) */}
+      {/* Primera Sección: Hero Section (ahora en dos columnas) */}
       <section style={{
         height: '100vh',
         width: '100%',
         display: 'flex',
-        flexDirection: 'column', // <<< CLAVE: Ahora es una columna
-        alignItems: 'center',    // Centra el contenido horizontalmente en la columna
-        justifyContent: 'center', // Centra el contenido verticalmente en la columna (ajustaremos con padding)
-        padding: '20px',         // Mantenemos padding general para la sección
-        position: 'relative',    // Necesario para posicionar SkillAtoms si fuera un hijo directo de section
+        flexDirection: 'row', // <<< CAMBIO CLAVE: Volvemos a 'row' para dos columnas
+        alignItems: 'stretch', // Asegura que las columnas hijas ocupen toda la altura
+        justifyContent: 'space-between', // Distribuye el espacio entre las columnas
+        padding: '20px', // Mantenemos padding general para la sección
+        position: 'relative', // Necesario para posicionar elementos absolutamente dentro de ella si fuera el caso
         backgroundColor: '#1a1a1a',
         zIndex: 10,
       }}>
 
-        {/* Contenedor para el Perfil y Texto (parte superior de la columna) */}
+        {/* --- Columna Izquierda: Título Vertical y Descripción Dinámica --- */}
         <div style={{
+          flex: 1, // Ocupa la mitad del espacio disponible
+          minWidth: 0, // Importante para Flexbox
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center', // Centra el texto en su propio contenedor
-          justifyContent: 'flex-start', // Alinea el texto arriba en su propio contenedor
-          paddingTop: '5vh', // Ajusta este valor para mover el texto hacia abajo desde el borde superior
-          paddingBottom: '2vh', // Espacio entre el texto y el avatar/skills
-          width: '100%', // Ocupa todo el ancho disponible en la columna
-          maxWidth: '800px', // Limita el ancho del texto en pantallas grandes
+          flexDirection: 'column', // Contenido de esta columna en vertical
+          justifyContent: 'center', // Centra el contenido verticalmente
+          alignItems: 'center', // Centra el contenido horizontalmente
+          paddingRight: '20px', // Espacio entre columnas
         }}>
-          <AnimatedText
-            text="MagupeDev"
-            className={styles.heroTitle}
-            type="char"
-            delay={0.03}
-          />
-          <AnimatedText
-            text="Desarrollador Front-End | Entusiasta UI/UX"
-            className={styles.heroSubtitle}
-            type="word"
-            delay={0.08}
-          />
+          {/* Contenedor para el Título Vertical (MagupeDev) */}
+          <div className={styles.verticalTitleWrapper}> {/* Usaremos esta clase para rotar */}
+            <AnimatedText
+              text="MagupeDev"
+              className={styles.heroTitle}
+              type="char"
+              delay={0.03}
+            />
+          </div>
+
+          {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
+          <div className={styles.verticalSubtitleWrapper}> {/* Usaremos esta clase para rotar */}
+            <AnimatedText
+              text="Desarrollador Front-End | Entusiasta UI/UX"
+              className={styles.heroSubtitle}
+              type="word"
+              delay={0.08}
+            />
+          </div>
+
+          {/* Manifiesto Dinámico (CyclingText) */}
+          <div style={{ marginTop: '40px', maxWidth: '80%' }}> {/* Espacio y ancho para el CyclingText */}
+            <CyclingText
+              phrases={manifestoPhrases}
+              interval={4000}
+              className={styles.heroDescription}
+            />
+          </div>
         </div>
 
-        {/* Contenedor para el Avatar y los Skills (parte inferior de la columna) */}
+        {/* --- Columna Derecha: Avatar y Skills --- */}
         <div style={{
-          position: 'relative', // ¡CRÍTICO! Hace que SkillAtoms se posicione absolutamente dentro de este div
+          flex: 1, // Ocupa la otra mitad del espacio disponible
+          minWidth: 0, // Importante para Flexbox
           display: 'flex',
-          justifyContent: 'flex-end', // Centra el avatar horizontalmente
+          justifyContent: 'center', // Centra el avatar horizontalmente
           alignItems: 'center',    // Centra el avatar verticalmente
-          width: '100%', // Ocupa todo el ancho disponible en la columna
-          height: 'auto', // Se ajusta a la altura del avatar
-          flexGrow: 1, // Permite que este div crezca y ocupe el espacio restante
-          paddingTop: '20px', // Espacio superior para el avatar si es necesario
+          position: 'relative',    // <<< ¡CRÍTICO! SkillAtoms se posicionará absolutamente dentro de este div
+          paddingLeft: '20px', // Espacio entre columnas
         }}>
           <HeroAvatar className={styles.heroAvatar} />
 
-          {/* Animación de los átomos de skills (posicionamiento absoluto dentro de este div) */}
-          {/* El className skillAtomsAbsolute ahora se ajustará a este nuevo contenedor */}
+          {/* Animación de los átomos de skills (posicionamiento absoluto dentro de esta columna) */}
           <SkillAtoms className={styles.skillAtomsAbsolute} />
         </div>
 
