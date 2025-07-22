@@ -1,11 +1,9 @@
 // src/App.jsx
 import React from 'react';
-import './index.css'; // Importa tu CSS global (contiene html, body, #root)
+import './index.css';
 
-// Importa los módulos CSS para este componente
 import styles from './App.module.css';
 
-// Importaciones de otros componentes
 import AnimatedText from './components/AnimatedText';
 import HeroAvatar from './components/HeroAvatar';
 import SkillAtoms from './components/SkillAtoms';
@@ -18,58 +16,70 @@ function App() {
     "La lógica se encuentra con el arte.",
     "Construyendo el futuro digital."
   ];
+
   return (
     <div className={styles.mainScrollContainer} style={{
       height: '300vh',
       position: 'relative',
     }}>
 
-      {/* Primera Sección: Hero Section (ahora en dos columnas) */}
       <section style={{
         height: '100vh',
         width: '100%',
         display: 'flex',
-        flexDirection: 'row', // <<< CAMBIO CLAVE: Volvemos a 'row' para dos columnas
-        alignItems: 'stretch', // Asegura que las columnas hijas ocupen toda la altura
-        justifyContent: 'space-between', // Distribuye el espacio entre las columnas
-        padding: '20px', // Mantenemos padding general para la sección
-        position: 'relative', // Necesario para posicionar elementos absolutamente dentro de ella si fuera el caso
+        flexDirection: 'row',
+        alignItems: 'stretch',
+        justifyContent: 'space-between',
+        padding: '20px',
+        position: 'relative',
         backgroundColor: '#1a1a1a',
         zIndex: 10,
       }}>
 
-        {/* --- Columna Izquierda: Título Vertical y Descripción Dinámica --- */}
+        {/* --- Columna Izquierda: Contenedor Principal (flex-direction: column) --- */}
         <div style={{
-          flex: 1, // Ocupa la mitad del espacio disponible
-          minWidth: 0, // Importante para Flexbox
+          flex: 1,
+          minWidth: 0,
           display: 'flex',
-          flexDirection: 'column', // Contenido de esta columna en vertical
-          justifyContent: 'center', // Centra el contenido verticalmente
-          alignItems: 'center', // Centra el contenido horizontalmente
-          paddingRight: '20px', // Espacio entre columnas
+          flexDirection: 'column', // Esta columna principal sigue apilando sus hijos verticalmente
+          justifyContent: 'center',
+          alignItems: 'flex-end',
+          
         }}>
-          {/* Contenedor para el Título Vertical (MagupeDev) */}
-          <div className={styles.verticalTitleWrapper}> {/* Usaremos esta clase para rotar */}
-            <AnimatedText
-              text="MagupeDev"
-              className={styles.heroTitle}
-              type="char"
-              delay={0.03}
-            />
-          </div>
+          {/* --- NUEVO: Contenedor para Título y Subtítulo (flex-direction: row) --- */}
+          {/* Este div hará que el título y subtítulo se coloquen uno al lado del otro */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row', // <<< ¡CLAVE! Ahora los wrappers de texto se alinean horizontalmente
+            justifyContent: 'center', // Centra el bloque de texto vertical
+            alignItems: 'flex-end', // Alinea la base de los textos verticales (ajusta a 'center' si prefieres)
+            marginBottom: '40px', // Espacio entre este bloque de texto y el CyclingText
+            width: '100%', // Ocupa el ancho completo para centrar bien
+          }}>
+            {/* Contenedor para el Título Vertical (MagupeDev) */}
+            <div className={styles.verticalTitleWrapper}>
+              <AnimatedText
+                text="MagupeDev"
+                className={styles.heroTitle}
+                type="char"
+                delay={0.03}
+              />
+            </div>
 
-          {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
-          <div className={styles.verticalSubtitleWrapper}> {/* Usaremos esta clase para rotar */}
-            <AnimatedText
-              text="Desarrollador Front-End | Entusiasta UI/UX"
-              className={styles.heroSubtitle}
-              type="word"
-              delay={0.08}
-            />
+            {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
+            <div className={styles.verticalSubtitleWrapper}>
+              <AnimatedText
+                text="Desarrollador Front-End | Entusiasta UI/UX"
+                className={styles.heroSubtitle}
+                type="word"
+                delay={0.08}
+              />
+            </div>
           </div>
+          {/* --- FIN del nuevo contenedor --- */}
 
           {/* Manifiesto Dinámico (CyclingText) */}
-          <div style={{ marginTop: '40px', maxWidth: '80%' }}> {/* Espacio y ancho para el CyclingText */}
+          <div style={{ maxWidth: '80%' }}>
             <CyclingText
               phrases={manifestoPhrases}
               interval={4000}
@@ -80,17 +90,15 @@ function App() {
 
         {/* --- Columna Derecha: Avatar y Skills --- */}
         <div style={{
-          flex: 1, // Ocupa la otra mitad del espacio disponible
-          minWidth: 0, // Importante para Flexbox
+          flex: 1,
+          minWidth: 0,
           display: 'flex',
-          justifyContent: 'center', // Centra el avatar horizontalmente
-          alignItems: 'center',    // Centra el avatar verticalmente
-          position: 'relative',    // <<< ¡CRÍTICO! SkillAtoms se posicionará absolutamente dentro de este div
-          paddingLeft: '20px', // Espacio entre columnas
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'relative',
+          paddingLeft: '20px',
         }}>
           <HeroAvatar className={styles.heroAvatar} />
-
-          {/* Animación de los átomos de skills (posicionamiento absoluto dentro de esta columna) */}
           <SkillAtoms className={styles.skillAtomsAbsolute} />
         </div>
 

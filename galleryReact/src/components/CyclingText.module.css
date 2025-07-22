@@ -10,7 +10,7 @@
     min-height: 2.5em; /* Aumentado ligeramente para dar espacio al brillo */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     overflow: hidden;
     /* Asegúrate de que no haya un background-color que tape el brillo */
   }
