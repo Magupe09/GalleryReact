@@ -18,7 +18,7 @@ function HeroAvatar({ className = '' }) {
         src={myAvatarImage}
         alt="Tu Avatar Profesional"
         style={{
-          maxWidth: '100%',
+          maxWidth: '270%',
           height: '500px',
           display: 'block'
         }}

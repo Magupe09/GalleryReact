@@ -32,7 +32,7 @@ function App() {
         justifyContent: 'space-between',
         padding: '20px',
         position: 'relative',
-        backgroundColor: '#1a1a1a',
+        backgroundColor: 'black',
         zIndex: 10,
       }}>
 
@@ -42,8 +42,11 @@ function App() {
           minWidth: 0,
           display: 'flex',
           flexDirection: 'column', // Esta columna principal sigue apilando sus hijos verticalmente
-          justifyContent: 'center',
-          alignItems: 'flex-end',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          paddingRight: '20px',
+          gap: '60px',
+          position: 'relative'
           
         }}>
           {/* --- NUEVO: Contenedor para Título y Subtítulo (flex-direction: row) --- */}
@@ -51,10 +54,11 @@ function App() {
           <div style={{
             display: 'flex',
             flexDirection: 'row', // <<< ¡CLAVE! Ahora los wrappers de texto se alinean horizontalmente
-            justifyContent: 'center', // Centra el bloque de texto vertical
+            justifyContent: 'flex-start', // Centra el bloque de texto vertical
             alignItems: 'flex-end', // Alinea la base de los textos verticales (ajusta a 'center' si prefieres)
-            marginBottom: '40px', // Espacio entre este bloque de texto y el CyclingText
+           // marginBottom: '10px', // Espacio entre este bloque de texto y el CyclingText
             width: '100%', // Ocupa el ancho completo para centrar bien
+            
           }}>
             {/* Contenedor para el Título Vertical (MagupeDev) */}
             <div className={styles.verticalTitleWrapper}>
@@ -78,8 +82,14 @@ function App() {
           </div>
           {/* --- FIN del nuevo contenedor --- */}
 
-          {/* Manifiesto Dinámico (CyclingText) */}
-          <div style={{ maxWidth: '80%' }}>
+          <div style={{
+            position: 'absolute', // Saca del flujo normal
+            bottom: '80px',      // A 20px de la parte inferior de la columna izquierda
+            left: '59%',         // A 50% del lado izquierdo de la columna izquierda
+            transform: 'translateX(-50%)', // Centra horizontalmente el div
+            maxWidth: '80%',     // Mantiene el ancho máximo
+            width: '100%',       // Ocupa el 100% del ancho disponible para maxWidth
+          }}>
             <CyclingText
               phrases={manifestoPhrases}
               interval={4000}
@@ -91,12 +101,12 @@ function App() {
         {/* --- Columna Derecha: Avatar y Skills --- */}
         <div style={{
           flex: 1,
-          minWidth: 0,
+          minWidth: '200px',
           display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: 'flex-end',
+          alignItems: 'flex-end',
           position: 'relative',
-          paddingLeft: '20px',
+          //paddingLeft: '20px',
         }}>
           <HeroAvatar className={styles.heroAvatar} />
           <SkillAtoms className={styles.skillAtomsAbsolute} />
