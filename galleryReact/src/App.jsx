@@ -7,7 +7,8 @@ import styles from './App.module.css';
 import AnimatedText from './components/AnimatedText';
 import HeroAvatar from './components/HeroAvatar';
 import SkillAtoms from './components/SkillAtoms';
-import CyclingText from './components/CyclingText';
+//import CyclingText from './components/CyclingText';
+import DynamicManifest from './components/DynamicManifest';
 
 function App() {
   const manifestoPhrases = [
@@ -84,24 +85,25 @@ function App() {
 
           <div style={{
             position: 'absolute', // Saca del flujo normal
-            bottom: '80px',      // A 20px de la parte inferior de la columna izquierda
-            left: '59%',         // A 50% del lado izquierdo de la columna izquierda
+            bottom: '-10px',      // A 20px de la parte inferior de la columna izquierda
+            left: '68%',         // A 50% del lado izquierdo de la columna izquierda
             transform: 'translateX(-50%)', // Centra horizontalmente el div
-            maxWidth: '80%',     // Mantiene el ancho máximo
+            maxWidth: '150%',     // Mantiene el ancho máximo
             width: '100%',       // Ocupa el 100% del ancho disponible para maxWidth
           }}>
-            <CyclingText
-              phrases={manifestoPhrases}
-              interval={4000}
-              className={styles.heroDescription}
+          {/* <<< CAMBIO CLAVE: Reemplazamos CyclingText por DynamicManifest */}
+          <DynamicManifest
+              phrases={manifestoPhrases} // Le pasamos las frases
+              className={styles.manifestoBlock} // Usaremos una nueva clase para este bloque
             />
+            {/* -------------------------------------------------- */}
           </div>
         </div>
 
         {/* --- Columna Derecha: Avatar y Skills --- */}
         <div style={{
           flex: 1,
-          minWidth: '200px',
+          minWidth: '300px',
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'flex-end',

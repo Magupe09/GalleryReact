@@ -11,7 +11,7 @@ function HeroAvatar({ className = '' }) {
     <motion.div
       className={className}
       initial={{ opacity: 0, x: -500 }}
-      animate={{ opacity: 1, x: -100 }}
+      animate={{ opacity: 1, x: -10 }}
       transition={{ duration: 3, ease: "easeOut" }}
     >
       <img

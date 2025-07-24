@@ -69,7 +69,7 @@
 
 .skillAtomsAbsolute {
   position: absolute;
-  right: 600px;
+  right: 500px;
   bottom: 30%;
   transform: translate(-50%, -50%);
   z-index: 15;
