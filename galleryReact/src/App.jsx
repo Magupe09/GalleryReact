@@ -83,18 +83,18 @@ function App() {
           </div>
           {/* --- FIN del nuevo contenedor --- */}
 
-          <div style={{
+          <div className={styles.manifestoBlock} style={{
             position: 'absolute', // Saca del flujo normal
-            bottom: '-10px',      // A 20px de la parte inferior de la columna izquierda
-            left: '68%',         // A 50% del lado izquierdo de la columna izquierda
+            bottom: '5px',      // A 20px de la parte inferior de la columna izquierda
+            left: '65%',         // A 50% del lado izquierdo de la columna izquierda
             transform: 'translateX(-50%)', // Centra horizontalmente el div
-            maxWidth: '150%',     // Mantiene el ancho máximo
+            maxWidth: '100%',     // Mantiene el ancho máximo
             width: '100%',       // Ocupa el 100% del ancho disponible para maxWidth
           }}>
           {/* <<< CAMBIO CLAVE: Reemplazamos CyclingText por DynamicManifest */}
           <DynamicManifest
               phrases={manifestoPhrases} // Le pasamos las frases
-              className={styles.manifestoBlock} // Usaremos una nueva clase para este bloque
+              
             />
             {/* -------------------------------------------------- */}
           </div>

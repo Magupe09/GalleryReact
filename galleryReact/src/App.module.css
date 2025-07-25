@@ -74,3 +74,11 @@
   transform: translate(-50%, -50%);
   z-index: 15;
 }
+.manifestoBlock {
+  font-size: 1.3em; /* Estas propiedades se aplican al contenedor del manifiesto */
+  font-weight: 400;
+  color: #e0e0e0;
+  max-width: 80%; /* Y otras propiedades que le hemos puesto */
+  line-height: 1.5;
+  text-shadow: none;
+}
