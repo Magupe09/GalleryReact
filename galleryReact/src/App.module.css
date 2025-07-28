@@ -74,6 +74,17 @@
   transform: translate(-50%, -50%);
   z-index: 15;
 }
+
+
+/* --- NUEVA CLASE: Para el contenedor de AITerminal en App.jsx --- */
+.aiTerminalWrapper {
+  /* Puedes añadir estilos específicos para el wrapper de la terminal aquí */
+  /* Por ejemplo, un padding extra, un background, etc. */
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  /* padding: 10px; */
+  /* border-radius: 10px; */
+}
+/* ------------------------------------------------------------------- */
 .manifestoBlock {
   font-size: 1.3em; /* Estas propiedades se aplican al contenedor del manifiesto */
   font-weight: 400;

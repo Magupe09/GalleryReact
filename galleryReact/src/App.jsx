@@ -9,6 +9,7 @@ import HeroAvatar from './components/HeroAvatar';
 import SkillAtoms from './components/SkillAtoms';
 //import CyclingText from './components/CyclingText';
 import DynamicManifest from './components/DynamicManifest';
+import AITerminal from './components/AITerminal'; 
 
 function App() {
   const manifestoPhrases = [
@@ -81,6 +82,26 @@ function App() {
               />
             </div>
           </div>
+
+          {/* <<< NUEVO: AITerminal posicionado absolutamente */}
+          <div
+            className={styles.aiTerminalWrapper} // Nueva clase para el wrapper de la terminal
+            style={{
+              position: 'absolute',
+              // Ajusta 'top' para posicionarlo debajo del texto vertical y encima del manifiesto
+              // Este valor dependerá de la altura total del bloque de texto vertical y el gap
+              // Puedes experimentar con 'top' o 'bottom' + 'height' para ubicarlo
+              top: '25%', // Posición inicial, ajusta según necesidad
+              left: '46%',
+              transform: 'translateX(-50%)',
+              maxWidth: '60%', // Ocupará la mayor parte del ancho de la columna
+              width: '100%',
+              zIndex: 20, // Asegura que esté por encima de otros elementos si se superponen
+            }}
+          >
+            <AITerminal />
+          </div>
+          {/* -------------------------------------------------- */}
           {/* --- FIN del nuevo contenedor --- */}
 
           <div className={styles.manifestoBlock} style={{
