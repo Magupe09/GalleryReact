@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from 'react';
+import React, {  useRef, useEffect, useState} from 'react';
 import './index.css';
 
 import styles from './App.module.css';
@@ -10,6 +10,7 @@ import SkillAtoms from './components/SkillAtoms';
 //import CyclingText from './components/CyclingText';
 import DynamicManifest from './components/DynamicManifest';
 import AITerminal from './components/AITerminal'; 
+import GearMenu from './components/GearMenu';
 
 function App() {
   const manifestoPhrases = [
@@ -18,6 +19,30 @@ function App() {
     "La lógica se encuentra con el arte.",
     "Construyendo el futuro digital."
   ];
+  
+  // Referencia para la primera sección (Hero Section) para el scroll del engranaje
+  const heroSectionRef = useRef(null)
+
+   // <<< NUEVO: useEffect para forzar el scroll a la parte superior al cargar la página >>>
+   useEffect(() => {
+    // Asegura que la ventana esté en la posición superior (0,0) al cargar.
+    // Esto combate la restauración del scroll del navegador.
+    window.scrollTo(0, 0);
+
+    // Opcional: También puedes añadir un listener para el evento 'beforeunload'
+    // para forzar el scroll a 0 antes de que el usuario abandone la página,
+    // lo que podría ayudar a que la próxima carga empiece desde arriba.
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Función de limpieza: Se ejecuta cuando el componente se desmonta.
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []); // El array vacío asegura que este efecto se ejecute solo una vez al montar.
+
 
   return (
     <div className={styles.mainScrollContainer} style={{
@@ -25,7 +50,9 @@ function App() {
       position: 'relative',
     }}>
 
-      <section style={{
+      <section
+      ref={heroSectionRef}
+       style={{
         height: '100vh',
         width: '100%',
         display: 'flex',
@@ -48,9 +75,24 @@ function App() {
           alignItems: 'center',
           paddingRight: '20px',
           gap: '60px',
-          position: 'relative'
-          
+          position: 'relative',
+          marginLeft:'65px'
         }}>
+          {/* <<< NUEVO: GearMenu posicionado absolutamente en la parte superior */}
+          <div
+            className={styles.gearMenuWrapper} // Nueva clase para el wrapper del engranaje
+            style={{
+             // Estas propiedades de estilo en línea aquí ahora solo afectan al wrapper,
+              // el engranaje en sí (dentro de GearMenu) es 'fixed'
+              // Puedes ajustar 'top'/'left' aquí si quieres que el engranaje "aparezca"
+              // desde un lugar específico en la columna antes de volverse fijo.
+              // O simplemente eliminar este div wrapper si no lo necesitas para nada más
+              // que contener el GearMenu
+            }}
+          >
+             <GearMenu/> {/* <<< Pasa la referencia de la sección */}
+          </div>
+          {/* -------------------------------------------------- */}
           {/* --- NUEVO: Contenedor para Título y Subtítulo (flex-direction: row) --- */}
           {/* Este div hará que el título y subtítulo se coloquen uno al lado del otro */}
           <div style={{
@@ -92,9 +134,9 @@ function App() {
               // Este valor dependerá de la altura total del bloque de texto vertical y el gap
               // Puedes experimentar con 'top' o 'bottom' + 'height' para ubicarlo
               top: '25%', // Posición inicial, ajusta según necesidad
-              left: '46%',
+              left: '53%',
               transform: 'translateX(-50%)',
-              maxWidth: '60%', // Ocupará la mayor parte del ancho de la columna
+              maxWidth: '70%', // Ocupará la mayor parte del ancho de la columna
               width: '100%',
               zIndex: 20, // Asegura que esté por encima de otros elementos si se superponen
             }}
