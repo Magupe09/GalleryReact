@@ -10,7 +10,7 @@ html, body {
   height: 100%;     /* ¡CRÍTICO! Ocupan el 100% de la altura del viewport */
   min-height: 100%; /* Asegura que puedan crecer más allá del 100% si es necesario */
   overflow-x: hidden; /* Evita el scroll horizontal no deseado */
-  scroll-behavior: smooth; /* Opcional: Hace que el scroll sea más suave */
+  /* scroll-behavior: smooth; */ /* Comentado para evitar scroll automático no deseado */
 }
 
 /* Asegura que el div donde se monta tu aplicación React (#root) también se extienda */
@@ -32,3 +32,8 @@ body {
 }
 
 /* Puedes añadir aquí otros estilos globales que no pertenezcan a un componente específico */
+
+/* Scroll suave solo para navegación manual (no automática) */
+html {
+  scroll-behavior: smooth;
+}

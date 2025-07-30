@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, {  useRef, useEffect, useState} from 'react';
+import React, {  useRef } from 'react';
 import './index.css';
 
 import styles from './App.module.css';
@@ -10,9 +10,10 @@ import SkillAtoms from './components/SkillAtoms';
 //import CyclingText from './components/CyclingText';
 import DynamicManifest from './components/DynamicManifest';
 import AITerminal from './components/AITerminal'; 
-import GearMenu from './components/GearMenu';
+//import GearMenu from './components/GearMenu';
 
 function App() {
+  
   const manifestoPhrases = [
     "Transformo ideas en código.",
     "Diseño experiencias intuitivas.",
@@ -23,30 +24,10 @@ function App() {
   // Referencia para la primera sección (Hero Section) para el scroll del engranaje
   const heroSectionRef = useRef(null)
 
-   // <<< NUEVO: useEffect para forzar el scroll a la parte superior al cargar la página >>>
-   useEffect(() => {
-    // Asegura que la ventana esté en la posición superior (0,0) al cargar.
-    // Esto combate la restauración del scroll del navegador.
-    window.scrollTo(0, 0);
-
-    // Opcional: También puedes añadir un listener para el evento 'beforeunload'
-    // para forzar el scroll a 0 antes de que el usuario abandone la página,
-    // lo que podría ayudar a que la próxima carga empiece desde arriba.
-    const handleBeforeUnload = () => {
-      window.scrollTo(0, 0);
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    // Función de limpieza: Se ejecuta cuando el componente se desmonta.
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []); // El array vacío asegura que este efecto se ejecute solo una vez al montar.
-
 
   return (
     <div className={styles.mainScrollContainer} style={{
-      height: '300vh',
+      height: '100vh',
       position: 'relative',
     }}>
 
@@ -90,7 +71,7 @@ function App() {
               // que contener el GearMenu
             }}
           >
-             <GearMenu/> {/* <<< Pasa la referencia de la sección */}
+            {/* <GearMenu/>  <<< Pasa la referencia de la sección */}
           </div>
           {/* -------------------------------------------------- */}
           {/* --- NUEVO: Contenedor para Título y Subtítulo (flex-direction: row) --- */}
@@ -105,24 +86,24 @@ function App() {
             
           }}>
             {/* Contenedor para el Título Vertical (MagupeDev) */}
-            <div className={styles.verticalTitleWrapper}>
-              <AnimatedText
-                text="MagupeDev"
-                className={styles.heroTitle}
-                type="char"
-                delay={0.03}
-              />
-            </div>
+                      <div className={styles.verticalTitleWrapper}>
+            <AnimatedText
+              text="MagupeDev"
+              className={styles.heroTitle}
+              type="char"
+              delay={0.03}
+            />
+          </div>
 
-            {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
-            <div className={styles.verticalSubtitleWrapper}>
-              <AnimatedText
-                text="Desarrollador Front-End | Entusiasta UI/UX"
-                className={styles.heroSubtitle}
-                type="word"
-                delay={0.08}
-              />
-            </div>
+          {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
+          <div className={styles.verticalSubtitleWrapper}>
+            <AnimatedText
+              text="Desarrollador Front-End | Entusiasta UI/UX"
+              className={styles.heroSubtitle}
+              type="word"
+              delay={0.08}
+            />
+          </div>
           </div>
 
           {/* <<< NUEVO: AITerminal posicionado absolutamente */}
@@ -179,7 +160,7 @@ function App() {
 
       </section>
 
-      {/* Segunda Sección: Proyectos */}
+      {/* Segunda Sección: Proyectos 
       <section style={{
         height: '100vh',
         width: '100%',
@@ -192,8 +173,8 @@ function App() {
       }}>
         <h2>Sección de Proyectos (Mundo 2)</h2>
       </section>
-
-      {/* Tercera Sección: Contacto/Experiencia */}
+       */}
+      {/* Tercera Sección: Contacto/Experiencia 
       <section style={{
         height: '100vh',
         width: '100%',
@@ -206,6 +187,7 @@ function App() {
       }}>
         <h2>Sección 3 (Mundo 3 - Contacto/Experiencia)</h2>
       </section>
+      */}
     </div>
   );
 }

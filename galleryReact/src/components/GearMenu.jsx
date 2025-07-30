@@ -19,7 +19,8 @@ function GearMenu({ className = '' }) {
   // La animación completa del engranaje ocurrirá en los primeros 800 píxeles de scroll.
   const { scrollYProgress } = useScroll({
     target: typeof document !== 'undefined' ? document.documentElement : undefined, // Monitorea el scroll global
-    offset: [0, 800] // La animación ocurre entre 0px y 800px de scroll del documento
+    offset: [0, 800] ,// La animación ocurre entre 0px y 800px de scroll del documento
+    layoutEffect: false
   });
 
   // Definimos cómo se transformará la escala del engranaje con el progreso del scroll.

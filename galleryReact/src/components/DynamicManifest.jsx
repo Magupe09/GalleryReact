@@ -33,20 +33,22 @@ function DynamicManifest({ phrases, className = '' }) {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      x: -200, // Comienza 200px a la izquierda (como si estuviera detrás del texto vertical)
-      y: 0,    // Posición Y inicial (se ajustará con 'custom' para apilarse)
+      x: 0,        // ← Comienza en su posición final
+      y: 0,        // Posición Y inicial (se ajustará con 'custom' para apilarse)
+      scale: 0.8,  // ← Usa scale para la animación
     },
     visible: (i) => ({ // 'i' es el index del item, pasado por la prop 'custom'
       opacity: 1,
-      x: 0, // Se mueve a su posición horizontal final (0px de desplazamiento)
-      y: i * 35, // Se apila verticalmente: cada frase se desplaza 35px hacia abajo (ajusta según font-size/line-height)
+      x: 0,        // ← Permanece en su posición final
+      y: i * 35,  // Se apila verticalmente
+      scale: 1,   // ← Solo cambia la escala
       transition: {
-        type: "spring", // Animación tipo muelle para un efecto más dinámico
-        stiffness: 100, // Rigidez del muelle (más alto = más rápido/rígido)
-        damping: 10,    // Amortiguación del muelle (más bajo = más rebote)
-        opacity: { duration: 0.5 }, // Duración de la opacidad
-        x: { duration: 1.0 },       // Duración del movimiento horizontal
-        y: { duration: 1.0 },       // Duración del movimiento vertical
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+        opacity: { duration: 0.5 },
+        scale: { duration: 1.0 },
+        y: { duration: 1.0 },
       },
     }),
   };
@@ -61,7 +63,7 @@ function DynamicManifest({ phrases, className = '' }) {
     const totalAnimationDuration =
       containerVariants.visible.transition.delayChildren +
       (phrases.length - 1) * containerVariants.visible.transition.staggerChildren +
-      itemVariants.visible(0).transition.x.duration; // Usamos la duración de 'x' como referencia
+      (itemVariants.visible(0).transition.scale?.duration || 1.0); // Usamos la duración de 'scale' como referencia
 
     // Añadimos un tiempo extra para que las frases permanezcan visibles antes de reiniciar.
     const loopDelay = totalAnimationDuration + 3; // 3 segundos extra de visibilidad

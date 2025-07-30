@@ -18,13 +18,13 @@ function AnimatedText({ text, type = 'word', delay = 0.05, className = '' }) {
   const childVariants = {
     hidden: {
       opacity: 0,
-      y: 20,
-      scale: 1,
+      y: 0,        // ← Comienza en su posición final
+      scale: 0.8,  // ← Usa scale para la animación visual
     },
     visible: {
       opacity: 1,
-      y: 0,
-      scale: 1,
+      y: 0,        // ← Permanece en su posición final
+      scale: 1,    // ← Solo cambia la escala
       transition: {
         type: 'spring',
         damping: 15,
