@@ -1,13 +1,13 @@
+/* src/components/GearMenu.module.css */
 
 .gearMenuContainer {
-  position: fixed; /* Asegura que se quede en la pantalla */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centrado perfecto */
-  width: 100px; /* Tamaño base cuando está encogido */
+  /* Hacemos que el engranaje "flote" sobre la página sin ocupar espacio */
+  position: fixed;
+  /* top, left y transform se controlan dinámicamente desde framer-motion */
+  width: 100px;
   height: 100px;
   cursor: pointer;
-  z-index: 9999; /* Asegura que esté por encima de TODO */
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@
   width: 100%;
   height: 100%;
   filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.7));
+  
 }
 
 .dropdownMenu {
@@ -37,7 +38,7 @@
 }
 
 .menuItem {
-  color: #00c6ff;
+  color: transparent;
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 4px;

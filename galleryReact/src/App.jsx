@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, {  useRef } from 'react';
+import React, { useRef,useState } from 'react';
 import './index.css';
 
 import styles from './App.module.css';
@@ -9,42 +9,54 @@ import HeroAvatar from './components/HeroAvatar';
 import SkillAtoms from './components/SkillAtoms';
 //import CyclingText from './components/CyclingText';
 import DynamicManifest from './components/DynamicManifest';
-import AITerminal from './components/AITerminal'; 
-//import GearMenu from './components/GearMenu';
+import AITerminal from './components/AITerminal';
+import GearMenu from './components/GearMenu';
+//import ProyectsModal from './components/ProyectsModal';
+
+
+
+
+
+
 
 function App() {
-  
+
   const manifestoPhrases = [
     "Transformo ideas en código.",
     "Diseño experiencias intuitivas.",
     "La lógica se encuentra con el arte.",
     "Construyendo el futuro digital."
   ];
-  
-  // Referencia para la primera sección (Hero Section) para el scroll del engranaje
-  const heroSectionRef = useRef(null)
 
+  // Referencia para la primera sección (Hero Section) para el scroll del engranaje
+  const heroSectionRef = useRef(null);
+  
+  
 
   return (
     <div className={styles.mainScrollContainer} style={{
       height: '100vh',
       position: 'relative',
+      overflow:'hidden'
+      
     }}>
+      
 
+     
       <section
-      ref={heroSectionRef}
-       style={{
-        height: '100vh',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'stretch',
-        justifyContent: 'space-between',
-        padding: '20px',
-        position: 'relative',
-        backgroundColor: 'black',
-        zIndex: 10,
-      }}>
+        ref={heroSectionRef}
+        style={{
+          height: '100vh',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'stretch',
+          justifyContent: 'space-between',
+          padding: '20px',
+          position: 'relative',
+          backgroundColor: 'black',
+          zIndex: 10,
+        }}>
 
         {/* --- Columna Izquierda: Contenedor Principal (flex-direction: column) --- */}
         <div style={{
@@ -57,23 +69,8 @@ function App() {
           paddingRight: '20px',
           gap: '60px',
           position: 'relative',
-          marginLeft:'65px'
+          marginLeft: '65px'
         }}>
-          {/* <<< NUEVO: GearMenu posicionado absolutamente en la parte superior */}
-          <div
-            className={styles.gearMenuWrapper} // Nueva clase para el wrapper del engranaje
-            style={{
-             // Estas propiedades de estilo en línea aquí ahora solo afectan al wrapper,
-              // el engranaje en sí (dentro de GearMenu) es 'fixed'
-              // Puedes ajustar 'top'/'left' aquí si quieres que el engranaje "aparezca"
-              // desde un lugar específico en la columna antes de volverse fijo.
-              // O simplemente eliminar este div wrapper si no lo necesitas para nada más
-              // que contener el GearMenu
-            }}
-          >
-            {/* <GearMenu/>  <<< Pasa la referencia de la sección */}
-          </div>
-          {/* -------------------------------------------------- */}
           {/* --- NUEVO: Contenedor para Título y Subtítulo (flex-direction: row) --- */}
           {/* Este div hará que el título y subtítulo se coloquen uno al lado del otro */}
           <div style={{
@@ -81,29 +78,28 @@ function App() {
             flexDirection: 'row', // <<< ¡CLAVE! Ahora los wrappers de texto se alinean horizontalmente
             justifyContent: 'flex-start', // Centra el bloque de texto vertical
             alignItems: 'flex-end', // Alinea la base de los textos verticales (ajusta a 'center' si prefieres)
-           // marginBottom: '10px', // Espacio entre este bloque de texto y el CyclingText
+            // marginBottom: '10px', // Espacio entre este bloque de texto y el CyclingText
             width: '100%', // Ocupa el ancho completo para centrar bien
-            
           }}>
             {/* Contenedor para el Título Vertical (MagupeDev) */}
-                      <div className={styles.verticalTitleWrapper}>
-            <AnimatedText
-              text="MagupeDev"
-              className={styles.heroTitle}
-              type="char"
-              delay={0.03}
-            />
-          </div>
+            <div className={styles.verticalTitleWrapper}>
+              <AnimatedText
+                text="MagupeDev"
+                className={styles.heroTitle}
+                type="char"
+                delay={0.03}
+              />
+            </div>
 
-          {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
-          <div className={styles.verticalSubtitleWrapper}>
-            <AnimatedText
-              text="Desarrollador Front-End | Entusiasta UI/UX"
-              className={styles.heroSubtitle}
-              type="word"
-              delay={0.08}
-            />
-          </div>
+            {/* Contenedor para el Subtítulo Vertical (Desarrollador Front-End) */}
+            <div className={styles.verticalSubtitleWrapper}>
+              <AnimatedText
+                text="Desarrollador Front-End | Entusiasta UI/UX"
+                className={styles.heroSubtitle}
+                type="word"
+                delay={0.08}
+              />
+            </div>
           </div>
 
           {/* <<< NUEVO: AITerminal posicionado absolutamente */}
@@ -135,10 +131,9 @@ function App() {
             maxWidth: '100%',     // Mantiene el ancho máximo
             width: '100%',       // Ocupa el 100% del ancho disponible para maxWidth
           }}>
-          {/* <<< CAMBIO CLAVE: Reemplazamos CyclingText por DynamicManifest */}
-          <DynamicManifest
+            {/* <<< CAMBIO CLAVE: Reemplazamos CyclingText por DynamicManifest */}
+            <DynamicManifest
               phrases={manifestoPhrases} // Le pasamos las frases
-              
             />
             {/* -------------------------------------------------- */}
           </div>
@@ -158,36 +153,8 @@ function App() {
           <SkillAtoms className={styles.skillAtomsAbsolute} />
         </div>
 
+       
       </section>
-
-      {/* Segunda Sección: Proyectos 
-      <section style={{
-        height: '100vh',
-        width: '100%',
-        backgroundColor: '#2a2a2a',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        zIndex: 9,
-      }}>
-        <h2>Sección de Proyectos (Mundo 2)</h2>
-      </section>
-       */}
-      {/* Tercera Sección: Contacto/Experiencia 
-      <section style={{
-        height: '100vh',
-        width: '100%',
-        backgroundColor: '#3a3a3a',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        zIndex: 8,
-      }}>
-        <h2>Sección 3 (Mundo 3 - Contacto/Experiencia)</h2>
-      </section>
-      */}
     </div>
   );
 }

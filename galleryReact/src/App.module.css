@@ -1,8 +1,31 @@
 /* src/App.module.css */
 
-.mainScrollContainer {
-  height: 300vh;
+.mainContainer {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.heroSection {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.contentWrapper {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  opacity: 1;
 }
 
 /* --- ESTILOS PARA EL TÍTULO Y SUBTÍTULO VERTICALES --- */
@@ -11,7 +34,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* border: 1px dashed yellow; */
 }
 
 .verticalTitleWrapper {
@@ -22,32 +44,27 @@
   margin-bottom: 40px;
 }
 
-
 .heroTitle {
+  font-family: 'Inter', sans-serif;
   font-size: 4em;
   font-weight: 700;
   color: #fff;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   white-space: nowrap;
-  
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  /* --- ¡NUEVO: Rotar 180 grados para que se lea hacia arriba! --- */
   transform: rotate(180deg);
-  /* --------------------------------------------------- */
 }
 
 .heroSubtitle {
+  font-family: 'Inter', sans-serif;
   font-size: 1.5em;
   font-weight: 300;
   color: #ccc;
   white-space: nowrap;
-  
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  /* --- ¡NUEVO: Rotar 180 grados para que se lea hacia arriba! --- */
   transform: rotate(180deg);
-  /* --------------------------------------------------- */
 }
 /* --------------------------------------------------------------- */
 
@@ -75,29 +92,154 @@
   z-index: 15;
 }
 
-
-/* --- NUEVA CLASE: Para el contenedor de AITerminal en App.jsx --- */
-.aiTerminalWrapper {
-  /* Puedes añadir estilos específicos para el wrapper de la terminal aquí */
-  /* Por ejemplo, un padding extra, un background, etc. */
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  /* padding: 10px; */
-  /* border-radius: 10px; */
-}
-/* ------------------------------------------------------------------- */
 .manifestoBlock {
-  font-size: 1.3em; /* Estas propiedades se aplican al contenedor del manifiesto */
+  font-size: 1.3em;
   font-weight: 400;
   color: #e0e0e0;
-  max-width: 80%; /* Y otras propiedades que le hemos puesto */
+  max-width: 80%;
   line-height: 1.5;
   text-shadow: none;
- 
   margin-left: 20px;
 }
-.gearMenuWrapper {
-  /* Puedes añadir estilos específicos para el wrapper del engranaje aquí */
-  /* Por ejemplo, un padding extra, un background, etc. */
-  /* background-color: rgba(255, 255, 0, 0.1); */
-  /* border-radius: 50%; */
+
+/* --- ESTILOS PARA EL BOTÓN DE ENGRANAJE (GearMenu) --- */
+.gearButton {
+  position: absolute;
+  top: 50%; /* <--- CAMBIO: Ahora está al 50% del top */
+  left: 50%; /* <--- CAMBIO: Ahora está al 50% de la izquierda */
+  transform: translate(-50%, -50%); /* <--- CLAVE: Esto lo centra perfectamente */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.gearIcon {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 5px rgba(0, 170, 255, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.gearButton:hover .gearIcon {
+  transform: rotate(30deg);
+}
+
+.gearButton:focus {
+  outline: none;
+}
+/* ---------------------------------------------------- */
+
+
+/* --- ESTILOS PARA EL MODAL DE PROYECTOS (ProjectsModal) --- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  position: relative;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  color: #fff;
+  border: 1px solid rgba(0, 170, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #00c6ff;
+}
+
+.modalTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #00c6ff;
+  margin-bottom: 20px;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.projectPoster {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectPoster:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3);
+}
+
+.posterImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.posterOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
+
+.posterTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.posterYear {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 5px 0 0;
 }
