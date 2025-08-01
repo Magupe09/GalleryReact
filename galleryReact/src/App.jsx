@@ -57,7 +57,7 @@ function App() {
           backgroundColor: 'black',
           zIndex: 10,
         }}>
-
+          <GearMenu />
         {/* --- Columna Izquierda: Contenedor Principal (flex-direction: column) --- */}
         <div style={{
           flex: 1,

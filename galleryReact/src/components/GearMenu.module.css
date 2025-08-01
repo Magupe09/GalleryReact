@@ -1,54 +1,31 @@
-/* src/components/GearMenu.module.css */
-
-.gearMenuContainer {
-  /* Hacemos que el engranaje "flote" sobre la página sin ocupar espacio */
+.gearButton {
   position: fixed;
-  /* top, left y transform se controlan dinámicamente desde framer-motion */
-  width: 100px;
-  height: 100px;
+  top: 40px;
+  right: 10px;
+  background: none;
+  border: none;
   cursor: pointer;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1000;
 }
+
 
 .gearIcon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.7));
-  
+  width: 20%;
+  height: 20%;
+  filter: drop-shadow(0 0 5px rgba(0, 170, 255, 0.7));
+  /* La transición se aplica al icono para una animación suave */
+  transition: transform 0.3s ease;
 }
 
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1a1a1a;
-  border: 1px solid rgba(0, 170, 255, 0.5);
-  border-radius: 8px;
-  padding: 15px;
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  z-index: 10000;
+/* Cuando el mouse pasa sobre el botón, el icono rota */
+.gearButton:hover .gearIcon {
+  transform: rotate(30deg); /* <--- rotación más sutil */
 }
 
-.menuItem {
-  color: transparent;
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  font-family: 'Inter', sans-serif;
-  font-size: 1em;
-  text-align: center;
+.gearButton:focus {
+  outline: none;
 }
 
-.menuItem:hover {
-  background-color: rgba(0, 170, 255, 0.2);
-  color: #fff;
-}
+
+ 
+
