@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ProyectsModal.module.css';
+import styles from './ProjectsModal.module.css';
 
 // Datos de proyectos de ejemplo
 const projects = [
@@ -19,6 +19,7 @@ const projects = [
 function ProjectsModal({ onClose }) {
   return (
     <div className={styles.modalOverlay}>
+      
       <div className={styles.modalContent}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;

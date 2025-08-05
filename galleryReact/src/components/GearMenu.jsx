@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './GearMenu.module.css';
+import ProjectsModal from './ProjectsModal.jsx';
 
 /**
  * Componente GearMenu: Botón con forma de engranaje de bicicleta.
@@ -7,8 +8,10 @@ import styles from './GearMenu.module.css';
  * @param {function} props.onClick - Función que se ejecuta al hacer clic en el botón.
  */
 function GearMenu({ onClick }) {
+
   return (
     <button className={styles.gearButton} onClick={onClick}>
+      
       <svg
         className={styles.gearIcon}
         viewBox="0 0 50 50"
@@ -19,6 +22,8 @@ function GearMenu({ onClick }) {
           fill="#00c6ff"
         />
       </svg>
+      
+     
     </button>
   );
 }

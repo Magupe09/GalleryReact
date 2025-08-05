@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useRef,useState } from 'react';
+import React, { useRef,useState,useEffect } from 'react';
 import './index.css';
 
 import styles from './App.module.css';
@@ -11,7 +11,7 @@ import SkillAtoms from './components/SkillAtoms';
 import DynamicManifest from './components/DynamicManifest';
 import AITerminal from './components/AITerminal';
 import GearMenu from './components/GearMenu';
-//import ProyectsModal from './components/ProyectsModal';
+import ProjectsModal from './components/ProjectsModal';
 
 
 
@@ -30,8 +30,18 @@ function App() {
 
   // Referencia para la primera sección (Hero Section) para el scroll del engranaje
   const heroSectionRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   
-  
+  useEffect(() => {
+    console.log('Estado del modal (isModalOpen):', isModalOpen);
+  }, [isModalOpen]);
+  // <<< FIN NUEVO >>
 
   return (
     <div className={styles.mainScrollContainer} style={{
@@ -40,6 +50,13 @@ function App() {
       overflow:'hidden'
       
     }}>
+      {/* --- EL BOTÓN DE ENGRANAJE QUE ABRE EL MODAL --- */}
+      {/* Le pasamos la función handleOpenModal a la prop 'onClick' */}
+      <GearMenu onClick={handleOpenModal} />
+
+      {/* --- EL MODAL DE PROYECTOS QUE SE MUESTRA CONDICIONALMENTE --- */}
+      {/* Solo se renderiza si isModalOpen es true, y le pasamos la función handleCloseModal */}
+      {isModalOpen && <ProjectsModal onClose={handleCloseModal} />}
       
 
      
@@ -57,7 +74,7 @@ function App() {
           backgroundColor: 'black',
           zIndex: 10,
         }}>
-          <GearMenu />
+        
         {/* --- Columna Izquierda: Contenedor Principal (flex-direction: column) --- */}
         <div style={{
           flex: 1,
