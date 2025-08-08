@@ -1,122 +1,156 @@
 /* src/App.module.css */
 
+/*
+  --- ESTILOS BASE (MÓVILES - Por defecto) ---
+  Diseño en columna centrada con scroll vertical
+*/
 .mainContainer {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  overflow: hidden;
   position: relative;
   background-color: #1a1a1a;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .heroSection {
-  height: 100%;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 200vh; /* Hacemos la sección mucho más larga para scroll */
+  box-sizing: border-box;
+  gap: 40px; /* Espacio entre componentes */
+}
+
+/* Contenedor del título principal */
+.titleBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  width: 100%;
+  margin-top: 80px; /* Espacio desde arriba */
+  margin-bottom: 20px;
+}
+
+/* Contenedor del GearMenu (espacio) */
+.gearMenuContainer {
+  width: 100%;
+  height: 60px; /* Espacio para el GearMenu fijo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del avatar */
+.avatarContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Contenedor de SkillAtoms (justo encima del avatar) */
+.skillAtomsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
   position: relative;
   z-index: 10;
 }
 
-.contentWrapper {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  opacity: 1;
-}
-
-/* --- ESTILOS PARA EL TÍTULO Y SUBTÍTULO VERTICALES --- */
-.verticalTitleWrapper,
-.verticalSubtitleWrapper {
+/* Contenedor del subtítulo */
+.subtitleBlock {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  margin: 20px 0;
 }
 
-.verticalTitleWrapper {
-  margin-bottom: 40px;
+/* Contenedor de AI Terminal */
+.aiTerminalContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.verticalSubtitleWrapper {
-  margin-bottom: 40px;
+/* Contenedor del manifiesto */
+.manifestoBlock {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+.heroTitle, .heroSubtitle {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
 }
 
 .heroTitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  white-space: nowrap;
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  transform: rotate(180deg);
 }
 
 .heroSubtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 300;
   color: #ccc;
-  white-space: nowrap;
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  transform: rotate(180deg);
 }
-/* --------------------------------------------------------------- */
 
 .heroDescription {
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 400;
   color: #e0e0e0;
   margin-top: 1em;
-  max-width: 70%;
-  line-height: 1.5;
+  max-width: 90%;
+  line-height: 1.6;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
-.heroAvatar {
-  max-width: 450px;
-  margin-left: 100px;
-  margin-bottom: 50px;
-  position: relative;
+.aiTerminalWrapper {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 .skillAtomsAbsolute {
-  position: absolute;
-  right: 325px;
-  bottom: 45%;
-  transform: translate(-50%, -50%);
-  z-index: 15;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.manifestoBlock {
-  font-size: 1.3em;
-  font-weight: 400;
-  color: #e0e0e0;
-  max-width: 80%;
-  line-height: 1.5;
-  text-shadow: none;
-  margin-left: 20px;
-}
-
-/* --- ESTILOS PARA EL BOTÓN DE ENGRANAJE (GearMenu) --- */
 .gearButton {
-  position: absolute;
-  top: 50%; /* <--- CAMBIO: Ahora está al 50% del top */
-  left: 50%; /* <--- CAMBIO: Ahora está al 50% de la izquierda */
-  transform: translate(-50%, -50%); /* <--- CLAVE: Esto lo centra perfectamente */
+  position: fixed;
+  bottom: 20px; /* Cambiado de top a bottom */
+  right: 20px; /* Cambiado de left a right */
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1000;
   padding: 0;
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
 }
 
 .gearIcon {
@@ -133,10 +167,7 @@
 .gearButton:focus {
   outline: none;
 }
-/* ---------------------------------------------------- */
 
-
-/* --- ESTILOS PARA EL MODAL DE PROYECTOS (ProjectsModal) --- */
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -157,8 +188,8 @@
   position: relative;
   background-color: #1a1a1a;
   border-radius: 12px;
-  padding: 30px;
-  max-width: 90%;
+  padding: 15px;
+  max-width: 95%;
   max-height: 90%;
   overflow-y: auto;
   color: #fff;
@@ -184,7 +215,7 @@
 
 .modalTitle {
   font-family: 'Inter', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   text-align: center;
   color: #00c6ff;
@@ -193,15 +224,15 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
   justify-items: center;
 }
 
 .projectPoster {
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 270px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -211,7 +242,7 @@
 
 .projectPoster:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3);
+  box-shadow: 8px 12px 20px rgba(0, 170, 255, 0.3);
 }
 
 .posterImage {
@@ -243,4 +274,100 @@
   font-size: 0.9rem;
   color: #ccc;
   margin: 5px 0 0;
+}
+
+/*
+  --- MEDIA QUERY PARA TABLETS (min-width: 768px) ---
+  Mantenemos el diseño en columna pero con mejor espaciado
+*/
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 40px 20px;
+    gap: 60px; /* Más espacio en tablets */
+  }
+
+  .titleBlock {
+    margin-top: 100px;
+  }
+
+  .heroTitle {
+    font-size: 3.5em;
+  }
+
+  .heroSubtitle {
+    font-size: 1.4em;
+  }
+
+  .aiTerminalContainer {
+    max-width: 600px;
+  }
+
+  .manifestoBlock {
+    max-width: 700px;
+    font-size: 1.1em;
+  }
+
+  .skillAtomsAbsolute {
+    max-width: 600px;
+  }
+
+  .gearButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .modalContent {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .modalTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .projectPoster {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+/*
+  --- MEDIA QUERY PARA ESCRITORIO GRANDE (min-width: 1024px) ---
+  Mejoramos el espaciado para pantallas grandes
+*/
+@media (min-width: 1024px) {
+  .heroSection {
+    padding: 60px 20px;
+    gap: 80px; /* Aún más espacio en desktop */
+  }
+
+  .titleBlock {
+    margin-top: 120px;
+  }
+
+  .heroTitle {
+    font-size: 4em;
+  }
+
+  .heroSubtitle {
+    font-size: 1.6em;
+  }
+
+  .aiTerminalContainer {
+    max-width: 700px;
+  }
+
+  .manifestoBlock {
+    max-width: 800px;
+    font-size: 1.2em;
+  }
+
+  .skillAtomsAbsolute {
+    max-width: 700px;
+  }
 }

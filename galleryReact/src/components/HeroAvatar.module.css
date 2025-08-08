@@ -1,53 +1,75 @@
-
 .heroAvatar {
-    max-width: 300px; /* Ajusta el tamaño máximo del contenedor del avatar */
-    height: 500px;
-    display: block;
-    /* Puedes añadir más estilos aquí para centrarlo o posicionarlo */
-    
-  }
-  /* src/components/HeroAvatar/HeroAvatar.module.css */
+  max-width: 300px; /* Ajusta el tamaño máximo del contenedor del avatar */
+  height: 500px;
+  display: block;
+  /* Puedes añadir más estilos aquí para centrarlo o posicionarlo */
+  
+}
+/* src/components/HeroAvatar/HeroAvatar.module.css */
 
 .avatarContainer {
-  /*
-    Esto es crucial. position: relative permite que el pseudo-elemento
-    ::after (la sombra) se posicione de forma absoluta dentro de este contenedor.
-  */
-  position: relative;
-  z-index: 10;
-  max-width: 450px;
-  margin-left: 100px;
-  margin-bottom: 50px;
-  /* El resto de estilos para el contenedor del avatar si los necesitas */
+/*
+  Esto es crucial. position: relative permite que el pseudo-elemento
+  ::after (la sombra) se posicione de forma absoluta dentro de este contenedor.
+*/
+position: relative;
+z-index: 10;
+max-width: 450px;
+margin-left: 100px;
+margin-bottom: 50px;
+/* El resto de estilos para el contenedor del avatar si los necesitas */
 }
 
 /* La imagen de tu avatar */
 .avatarImage {
-  width: 100%;
-  height: auto;
-  display: block;
+width: 100%;
+height: auto;
+display: block;
 }
 
 /* El pseudo-elemento que crea la sombra */
 .avatarContainer::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  left: 75%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, 0) rotateX(80deg) scale(1, 2);
-  transform-origin: bottom;
-  
-  /* Aquí es donde se usa la imagen de la silueta.
-     Debe ser una imagen con fondo transparente.
-  */
-  background-image: var(--shadow-image); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center bottom;
+content: '';
+position: absolute;
+bottom: -20px;
+left: 75%;
+width: 100%;
+height: 100%;
+transform: translate(-50%, 0) rotateX(80deg) scale(1, 2);
+transform-origin: bottom;
 
-  /* Filtros para la sombra blanca */
-  filter: blur(8px) invert(1) opacity(0.2);
-  z-index: -1;
+/* Aquí es donde se usa la imagen de la silueta.
+   Debe ser una imagen con fondo transparente.
+*/
+background-image: var(--shadow-image); 
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center bottom;
+
+/* Filtros para la sombra blanca */
+filter: blur(8px) invert(1) opacity(0.2);
+z-index: -1;
+}
+
+
+/* --- MEDIA QUERIES PARA DISPOSITIVOS MÓVILES (max-width: 768px) --- */
+@media (max-width: 768px) {
+/*
+  Reducimos el tamaño del contenedor del avatar y centramos en la pantalla.
+  Esto hará que la imagen del avatar y su sombra sean más pequeñas.
+*/
+.avatarContainer {
+  max-width: 300px; /* Tamaño más apropiado para móviles */
+  margin: 0 auto; /* Centramos el contenedor */
+}
+
+/*
+  Ajustamos la sombra para que se vea mejor con el avatar más pequeño.
+  Reducimos el "aplanamiento" (scale) y el desenfoque.
+*/
+.avatarContainer::after {
+  bottom: -15px; /* Ajustamos la posición */
+  transform: translate(-50%, 0) rotateX(80deg) scale(0.7, 0.3); /* Hacemos la sombra más pequeña */
+  filter: blur(5px) invert(1) opacity(0.2); /* Menos desenfoque y opacidad */
+}
 }

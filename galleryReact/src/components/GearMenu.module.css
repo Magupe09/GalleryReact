@@ -1,13 +1,12 @@
 .gearButton {
   position: fixed;
-  top: 40px;
-  right: 10px;
+  bottom: 20px;
+  right: -92px; /* Valor negativo para que se vea pegado al borde en pantallas pequeñas */
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1000;
 }
-
 
 .gearIcon {
   width: 20%;
@@ -24,6 +23,19 @@
 
 .gearButton:focus {
   outline: none;
+}
+
+/* Para pantallas más grandes, ajustamos la posición */
+@media (min-width: 768px) {
+  .gearButton {
+    right: 10px; /* Más espacio en tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .gearButton {
+    right: 20px; /* Aún más espacio en desktop */
+  }
 }
 
 
