@@ -32,8 +32,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 80px; /* Espacio desde arriba */
-  margin-bottom: 20px;
+  margin-top: 30px; /* Reducido de 80px a 30px para estar más arriba */
+  margin-bottom: 5px; /* Reducido de 20px a 5px para acercar al subtítulo */
 }
 
 /* Contenedor del GearMenu (espacio) */
@@ -51,17 +51,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: -33px 0; /* Reducido de 20px a 10px para subir el avatar */
 }
 
 /* Contenedor de SkillAtoms (justo encima del avatar) */
 .skillAtomsContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
+ 
+  position: absolute;
+  
+ 
   z-index: 10;
 }
 
@@ -71,7 +69,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: -46px 0; /* Reducido de 20px a 5px para acercar al título */
 }
 
 /* Contenedor de AI Terminal */
@@ -138,6 +136,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  top: 5px;
+  right: 140px;
 }
 
 .gearButton {

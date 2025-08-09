@@ -12,6 +12,10 @@ html, body {
   overflow-x: hidden; /* Evita el scroll horizontal no deseado */
   /* scroll-behavior: smooth; */ /* Comentado para evitar scroll automático no deseado */
 }
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.3);
+}
+
 
 /* Asegura que el div donde se monta tu aplicación React (#root) también se extienda */
 #root {

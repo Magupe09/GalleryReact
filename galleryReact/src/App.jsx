@@ -63,13 +63,23 @@ function App() {
         
         {/* --- TÍTULO PRINCIPAL --- */}
         <div className={styles.titleBlock}>
-          <AnimatedText
-            text="MagupeDev"
-            className={styles.heroTitle}
-            type="char"
-            delay={0.03}
-          />
-        </div>
+              <AnimatedText
+                text="MagupeDev"
+                className={styles.heroTitle}
+                type="char"
+                delay={0.03}
+              />
+            </div>
+
+        {/* --- SUBTÍTULO --- */}
+        <div className={styles.subtitleBlock}>
+              <AnimatedText
+                text="Desarrollador Front-End | Entusiasta UI/UX"
+                className={styles.heroSubtitle}
+                type="word"
+                delay={0.08}
+              />
+          </div>
 
         {/* --- GEAR MENU --- */}
         <div className={styles.gearMenuContainer}>
@@ -86,26 +96,16 @@ function App() {
           <SkillAtoms className={styles.skillAtomsAbsolute} />
         </div>
 
-        {/* --- SUBTÍTULO --- */}
-        <div className={styles.subtitleBlock}>
-          <AnimatedText
-            text="Desarrollador Front-End | Entusiasta UI/UX"
-            className={styles.heroSubtitle}
-            type="word"
-            delay={0.08}
-          />
-        </div>
-
         {/* --- AI TERMINAL --- */}
         <div className={styles.aiTerminalContainer}>
-          <AITerminal />
-        </div>
+            <AITerminal />
+          </div>
 
         {/* --- MANIFIESTO (opcional, al final) --- */}
         <div className={styles.manifestoBlock}>
-          <DynamicManifest
-            phrases={manifestoPhrases} // Le pasamos las frases
-          />
+            <DynamicManifest
+              phrases={manifestoPhrases} // Le pasamos las frases
+            />
         </div>
 
        
