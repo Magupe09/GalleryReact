@@ -21,6 +21,15 @@ import ProjectsModal from './components/ProjectsModal';
 
 
 function App() {
+  useEffect(() => {
+    // Desactivar el comportamiento automático del scroll
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Forzar siempre ir arriba cuando se recarga
+    window.scrollTo(0, 0);
+  }, []);
 
   const manifestoPhrases = [
     "Transformo ideas en código.",

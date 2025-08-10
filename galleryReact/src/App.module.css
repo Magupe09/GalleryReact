@@ -20,9 +20,9 @@
   align-items: center;
   justify-content: flex-start;
   padding: 20px;
-  min-height: 200vh; /* Hacemos la sección mucho más larga para scroll */
+  min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
   box-sizing: border-box;
-  gap: 40px; /* Espacio entre componentes */
+  
 }
 
 /* Contenedor del título principal */
@@ -51,7 +51,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -33px 0; /* Reducido de 20px a 10px para subir el avatar */
+  margin: 29px 0; /* Reducido de 20px a 10px para subir el avatar */
 }
 
 /* Contenedor de SkillAtoms (justo encima del avatar) */
@@ -69,26 +69,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -46px 0; /* Reducido de 20px a 5px para acercar al título */
+  margin: 2px 0; /* Reducido de 20px a 5px para acercar al título */
 }
 
 /* Contenedor de AI Terminal */
 .aiTerminalContainer {
   width: 100%;
-  max-width: 500px;
+  max-width: 350px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 27px 20px;
+  margin:0 ;
 }
 
 /* Contenedor del manifiesto */
 .manifestoBlock {
   width: 100%;
-  max-width: 600px;
+  max-width: 350px;
   margin: 40px auto;
   text-align: center;
-  font-size: 1em;
+  font-size: .8em;
   line-height: 1.6;
   padding: 0 20px;
+  margin-top: 0;
 }
 
 .heroTitle, .heroSubtitle {
