@@ -9,7 +9,7 @@
     flex-direction: column;
     overflow: hidden;
     max-width: 100%;
-    min-height: 280px; /* Altura mínima ligeramente aumentada para más espacio */
+    min-height: 380px; /* Altura mínima ligeramente aumentada para más espacio */
     border: 1px solid rgba(40, 100, 150, 0.5); /* Borde sutil azul oscuro */
   }
   

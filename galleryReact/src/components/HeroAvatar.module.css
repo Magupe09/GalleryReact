@@ -58,7 +58,7 @@ z-index: -2; /* Aseguramos que esté detrás del avatar */
 */
 .avatarContainer {
   max-width: 300px; /* Tamaño más apropiado para móviles */
-  margin: 0 auto; /* Centramos el contenedor */
+  margin: -5px auto; /* Centramos el contenedor */
 }
 
 /*

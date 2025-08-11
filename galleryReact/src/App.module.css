@@ -283,22 +283,28 @@
   --- MEDIA QUERY PARA TABLETS (min-width: 768px) ---
   Mantenemos el diseño en columna pero con mejor espaciado
 */
-@media (min-width: 768px) {
+@media (min-width: 668px) {
   .heroSection {
     padding: 40px 20px;
-    gap: 60px; /* Más espacio en tablets */
+    gap: 10px; /* Más espacio en tablets */
   }
 
   .titleBlock {
-    margin-top: 100px;
+    margin-top: 10px;
+  }
+  .subtitleBlock {
+    margin: -19px 0; /* Reducido de 20px a 5px para acercar al título */
   }
 
   .heroTitle {
     font-size: 3.5em;
+    
+    
   }
 
   .heroSubtitle {
     font-size: 1.4em;
+    background-color: red;
   }
 
   .aiTerminalContainer {
@@ -307,7 +313,68 @@
 
   .manifestoBlock {
     max-width: 700px;
-    font-size: 1.1em;
+    font-size: 1.3em;
+  }
+
+  .skillAtomsAbsolute {
+    max-width: 600px;
+  }
+
+  .gearButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .modalContent {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .modalTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .projectPoster {
+    width: 200px;
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 40px 20px;
+    gap: 5px; /* Más espacio en tablets */
+  }
+
+  .titleBlock {
+    margin-top: 10px;
+  }
+  .subtitleBlock {
+    margin: -19px 0; /* Reducido de 20px a 5px para acercar al título */
+  }
+
+  .heroTitle {
+    font-size: 3.5em;
+    
+    
+  }
+
+  .heroSubtitle {
+    font-size: 1.4em;
+    background-color: red;
+  }
+
+  .aiTerminalContainer {
+    max-width: 600px;
+  }
+
+  .manifestoBlock {
+    max-width: 700px;
+    font-size: 1.3em;
   }
 
   .skillAtomsAbsolute {
@@ -339,38 +406,77 @@
   }
 }
 
+
+
+
+
+
+
+
 /*
   --- MEDIA QUERY PARA ESCRITORIO GRANDE (min-width: 1024px) ---
   Mejoramos el espaciado para pantallas grandes
 */
-@media (min-width: 1024px) {
-  .heroSection {
-    padding: 60px 20px;
-    gap: 80px; /* Aún más espacio en desktop */
-  }
 
-  .titleBlock {
-    margin-top: 120px;
-  }
 
-  .heroTitle {
-    font-size: 4em;
+  @media (min-width: 1024px) {
+    .heroSection {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 0;
+      position: absolute;
+    }
+  
+    /* Bloque del título a la izquierda en vertical */
+    .titleBlock, .subtitleBlock {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      justify-content: center;
+      align-items:start;
+      margin: 0;
+      left: 10px;
+     
+    }
+  
+  
+  
+    /* Terminal en la parte baja izquierda, max 50% ancho */
+    .aiTerminalContainer {
+      position: absolute;
+    left: 100px;
+    top: 10px;
+    height: 400px;
+    }
+  
+    /* Avatar a la derecha */
+    .avatarContainer {
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  
+    /* Skills encima del avatar */
+    .skillAtomsContainer {
+      position: absolute;
+      top: 10%;
+      right: 25%;
+      transform: translateY(-50%);
+    }
+  
+    /* Botón arriba a la derecha */
+    .gearButton {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      bottom: auto;
+    }
   }
-
-  .heroSubtitle {
-    font-size: 1.6em;
-  }
-
-  .aiTerminalContainer {
-    max-width: 700px;
-  }
-
-  .manifestoBlock {
-    max-width: 800px;
-    font-size: 1.2em;
-  }
-
-  .skillAtomsAbsolute {
-    max-width: 700px;
-  }
-}
+  
+ 
+  
+  /* ---------------------------------------------------- */
+  
+  

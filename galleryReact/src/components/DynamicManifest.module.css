@@ -53,3 +53,20 @@
     line-height: 1.2;
     /* Ajusta el interlineado para el apilamiento */
 }
+
+
+@media (min-width: 768px){
+
+    .dynamicManifestContainer {
+        padding-left: 38px;
+    }
+}
+
+@media (min-width: 1024px){
+
+    .dynamicManifestContainer {
+       position: absolute;
+       left: 100px;
+       bottom: 50px;
+    }
+}

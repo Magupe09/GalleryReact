@@ -65,18 +65,22 @@
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   padding: 20px;
+  background-color: red;
   
 }
 
 .projectPoster {
   position: relative;
-  width: 270px;
+  min-width: 200px;
+  max-width: 370px;
+  width: 100%;
   height: 160px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: wheat;
 }
 
 .projectPoster:hover {
@@ -114,9 +118,25 @@
   color: #ccc;
   margin: 5px 0 0;
 }
+/* ===== Tablet pequeña (≥ 450px) ===== 
+
+  */
 
 /* ===== Tablet pequeña (≥ 450px) ===== */
 @media (min-width: 450px) {
+  .projectsGrid {
+    width: 93%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+ 
+
+  .modalTitle {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 680px) {
   .projectsGrid {
     width: 93%;
     grid-template-columns: repeat(2, 1fr);
@@ -132,7 +152,6 @@
     font-size: 2rem;
   }
 }
-
 /* ===== Pantalla grande (≥ 1000px) ===== */
 @media (min-width: 1000px) {
   .projectsGrid {
