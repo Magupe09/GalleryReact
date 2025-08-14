@@ -5,5 +5,6 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb', '**/*.gltf'], // Incluye archivos GLB y GLTF como assets
+  base: '/GalleryReact/',
   // -------------------------
 })

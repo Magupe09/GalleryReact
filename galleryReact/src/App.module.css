@@ -304,7 +304,7 @@
 
   .heroSubtitle {
     font-size: 1.4em;
-    background-color: red;
+    
   }
 
   .aiTerminalContainer {
@@ -365,7 +365,7 @@
 
   .heroSubtitle {
     font-size: 1.4em;
-    background-color: red;
+  
   }
 
   .aiTerminalContainer {
@@ -462,7 +462,7 @@
     .skillAtomsContainer {
       position: absolute;
       top: 10%;
-      right: 25%;
+      left: 115%;
       transform: translateY(-50%);
     }
   

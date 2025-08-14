@@ -15,8 +15,8 @@
 position: relative;
 z-index: 1; /* Aseguramos que el avatar esté por encima de la sombra */
 max-width: 450px;
-margin-left: 100px;
-margin-bottom: 50px;
+margin-left: 10px;
+margin-bottom: 10px;
 /* El resto de estilos para el contenedor del avatar si los necesitas */
 }
 
@@ -70,4 +70,16 @@ z-index: -2; /* Aseguramos que esté detrás del avatar */
   transform: translate(-50%, 0) rotateX(80deg) scale(0.9, 6); /* Hacemos la sombra más pequeña */
   filter: blur(5px) invert(1) opacity(0.2); /* Menos desenfoque y opacidad */
 }
+}
+
+@media (min-width: 1024px) {
+  .avatarContainer {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 100px;
+  }
+  .avatarImage {
+    margin-right: 20rem ;
+    
+  }
 }
