@@ -40,6 +40,7 @@ transform-origin: bottom;
 
 /* Usamos la imagen del avatar para la sombra */
 background-image: var(--shadow-image); 
+color: #FF5714;
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center bottom;

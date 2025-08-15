@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    max-width: 100%;
+    max-width: 90%;
     min-height: 380px; /* Altura mínima ligeramente aumentada para más espacio */
     border: 1px solid rgba(40, 100, 150, 0.5); /* Borde sutil azul oscuro */
   }
@@ -40,7 +40,7 @@
   
   .terminalBody {
     flex-grow: 1;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,7 +49,7 @@
   .terminalMessages {
     flex-grow: 1;
     /* --- CLAVE PARA EL DESBORDE --- */
-    max-height: 180px; /* Altura máxima para el historial de mensajes */
+    max-height: 280px; /* Altura máxima para el historial de mensajes */
     overflow-y: auto;  /* Habilita el scroll vertical si el contenido excede max-height */
     /* ------------------------------ */
     margin-bottom: 10px;
@@ -61,15 +61,15 @@
   
   /* Estilo para el scrollbar (Webkit) */
   .terminalMessages::-webkit-scrollbar {
-    width: 8px;
+    width: 20px;
   }
   .terminalMessages::-webkit-scrollbar-track {
-    background: #161b22; /* Fondo del track del scrollbar */
-    border-radius: 10px;
+    background: #FCFCFC; /* Fondo del track del scrollbar */
+    border-radius: 100px;
   }
   .terminalMessages::-webkit-scrollbar-thumb {
     background: #30363d; /* Color del thumb del scrollbar */
-    border-radius: 10px;
+    border-radius: 100px;
   }
   .terminalMessages::-webkit-scrollbar-thumb:hover {
     background: #444c56; /* Color al pasar el ratón */
@@ -90,7 +90,7 @@
   
   .aiPrompt {
     color: #a0a6a9; /* Prompt de la IA en gris claro */
-    margin-right: 8px; /* Espacio aumentado */
+    margin-right: 15px; /* Espacio aumentado */
   }
   
   .terminalInputForm {
