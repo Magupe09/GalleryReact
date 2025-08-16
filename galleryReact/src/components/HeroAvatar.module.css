@@ -40,13 +40,13 @@ transform-origin: bottom;
 
 /* Usamos la imagen del avatar para la sombra */
 background-image: var(--shadow-image); 
-color: #FF5714;
+
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center bottom;
 
 /* Filtros para crear una sombra realista - aumentamos opacidad */
-filter: brightness(0) saturate(100%) invert(0) opacity(0.5) blur(6px);
+filter: brightness(0) saturate(100%) invert(1) opacity(0.5) blur(4px);
 z-index: -2; /* Aseguramos que esté detrás del avatar */
 }
 

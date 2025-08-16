@@ -4,6 +4,10 @@
   --- ESTILOS BASE (MÓVILES - Por defecto) ---
   Diseño en columna centrada con scroll vertical
 */
+* {
+  outline: 1px solid red;
+}
+
 .mainContainer {
   min-height: 100vh;
   width: 100vw;
@@ -140,7 +144,7 @@
   justify-content: center;
   align-items: center;
   
-  top: 5px;
+  top: -40px;
   right: 140px;
 }
 
@@ -309,7 +313,7 @@
   }
 
   .aiTerminalContainer {
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .manifestoBlock {
@@ -462,8 +466,8 @@
     /* Skills encima del avatar */
     .skillAtomsContainer {
       position: absolute;
-      top: 10%;
-      left: 115%;
+      top: 15%;
+      left: 120%;
       transform: translateY(-50%);
     }
   
@@ -479,5 +483,4 @@
  
   
   /* ---------------------------------------------------- */
-  
   

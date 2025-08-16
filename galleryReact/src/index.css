@@ -9,8 +9,8 @@ html, body {
   width: 100%;      /* Asegura que ocupen el 100% del ancho del viewport */
   height: 100%;     /* ¡CRÍTICO! Ocupan el 100% de la altura del viewport */
   min-height: 100%; /* Asegura que puedan crecer más allá del 100% si es necesario */
-  overflow-x: hidden; /* Evita el scroll horizontal no deseado */
-  /* scroll-behavior: smooth; */ /* Comentado para evitar scroll automático no deseado */
+ /*  overflow-y: hidden; Evita el scroll horizontal no deseado 
+  scroll-behavior: auto;   Comentado para evitar scroll automático no deseado */
 }
 
 /*
