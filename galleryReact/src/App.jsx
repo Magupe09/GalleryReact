@@ -102,11 +102,11 @@ function App() {
           <SkillAtoms className={styles.skillAtomsAbsolute} />
         </div>
 
-        {/* --- AI TERMINAL --- */}
+        {/* --- AI TERMINAL ---*/}
         <div className={styles.aiTerminalContainer}>
             <AITerminal />
           </div>
-
+ 
         {/* --- MANIFIESTO (opcional, al final) --- */}
         <div className={styles.manifestoBlock}>
             <DynamicManifest
