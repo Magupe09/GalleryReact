@@ -24,10 +24,10 @@
   align-items: center;
   justify-content: flex-start;
   padding: 20px;
-  min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
+  /*min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
   box-sizing: border-box;
   background-color: #FF5714;
-  overflow-x: hidden;
+ /* overflow-x: hidden;*/
   
 }
 
@@ -81,7 +81,7 @@
 /* Contenedor de AI Terminal */
 .aiTerminalContainer {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   margin: 40px auto;
   padding: 27px 20px;
   margin:0 ;
@@ -446,9 +446,15 @@
       transform: rotate(180deg);
       justify-content: center;
       align-items:start;
-      margin: 0;
-      left: 10px;
+      margin: 0px;
+      
+      
      
+    }
+    .titleBlock{
+      padding-bottom: 10px;
+      background-color: red;
+      align-items: center;
     }
   
   
@@ -466,7 +472,7 @@
       flex: 1;
       justify-content: center;
       align-items: center;
-      margin: 0;
+      
     }
   
     /* Skills encima del avatar */

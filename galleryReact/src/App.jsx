@@ -106,7 +106,7 @@ function App() {
         <div className={styles.aiTerminalContainer}>
             <AITerminal />
           </div>
- 
+        
         {/* --- MANIFIESTO (opcional, al final) --- */}
         <div className={styles.manifestoBlock}>
             <DynamicManifest

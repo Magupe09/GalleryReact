@@ -31,7 +31,7 @@ display: block;
 .avatarContainer::after {
 content: '';
 position: absolute;
-bottom: -100px; /* Duplicado de -50px a -100px */
+bottom: -60px; /* Duplicado de -50px a -100px */
 left: 75%;
 width: 100%; /* Duplicado de 200% a 400% */
 height: 100%; /* Duplicado de 300% a 600% */
