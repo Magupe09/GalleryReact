@@ -1,6 +1,6 @@
 
 .terminalContainer {
-    background-color: #0d1117; /* Fondo oscuro y profundo, como una terminal real */
+    background-color: #FFD400; /* Fondo oscuro y profundo, como una terminal real */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 170, 255, 0.3); /* Sombra de brillo azul sutil y profesional */
     font-family: 'Consolas', 'Monaco', monospace; /* Fuente monoespaciada para look de terminal */

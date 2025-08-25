@@ -46,7 +46,7 @@ background-repeat: no-repeat;
 background-position: center bottom;
 
 /* Filtros para crear una sombra realista - aumentamos opacidad */
-filter: brightness(0) saturate(100%) invert(1) opacity(0.5) blur(4px);
+filter: brightness(0) saturate(100%) invert(0) opacity(0.5) blur(4px);
 z-index: -2; /* Aseguramos que esté detrás del avatar */
 }
 

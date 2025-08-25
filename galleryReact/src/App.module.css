@@ -3,32 +3,35 @@
 /*
   --- ESTILOS BASE (MÓVILES - Por defecto) ---
   Diseño en columna centrada con scroll vertical
-*/
+
 * {
   outline: 1px solid red;
 }
+  */
 
 .mainContainer {
   min-height: 100vh;
   width: 100vw;
   position: relative;
  
-  background-color: #000000;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
 }
 
 .heroSection {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  
   padding: 20px;
   /*min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
   box-sizing: border-box;
-  background-color: #FF5714;
- /* overflow-x: hidden;*/
-  
+  background-color: #000000;
+ /* overflow-x: hidden; FF5714   FDFFFC*/
+   
 }
 
 /* Contenedor del título principal */
@@ -431,32 +434,59 @@
 
 
   @media (min-width: 1024px) {
+
+
+/*
     .heroSection {
       flex-direction: row;
       align-items: stretch;
       justify-content: space-between;
       height: 100vh;
       padding: 0;
+      background-color: green;
       position: absolute;
     }
+      */
+      .heroSection {
+        /* Quita las propiedades de Flexbox que tenías aquí */
+        display: grid; /* Esta es la clave */
+        grid-template-columns: 1fr 1fr; /* Dividimos el espacio en dos columnas iguales */
+        height: 100vh;
+        padding: 0;
+      }
+      .titleBlock, .subtitleBlock, .aiTerminalContainer, .manifestoBlock {
+        grid-column: 1 / 2; /* Colocamos estos elementos en la primera columna */
+        /* Puedes seguir usando 'position: absolute' o Flexbox para organizarlos dentro de la columna */
+      }
+
+      .avatarContainer, .skillAtomsContainer {
+        grid-column: 2 / 3; /* Colocamos estos elementos en la segunda columna */
+      }
   
     /* Bloque del título a la izquierda en vertical */
     .titleBlock, .subtitleBlock {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+      /* Mueve estos estilos al selector .heroTitle */
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items:start;
+      align-items: center;
       margin: 0px;
-      
-      
+      background-color: #377555;
+      width: 20px;
+    }
+    
+    .heroTitle, .subtitleBlock {
+      writing-mode: vertical-rl; /* Aplica el modo de escritura al texto */
+      transform: rotate(180deg); /* Rótalo 180 grados para que se lea de arriba a abajo */
+      /* Quita cualquier otro estilo que tengas aquí que pueda interferir */
      
     }
-    .titleBlock{
-      padding-bottom: 10px;
-      background-color: red;
-      align-items: center;
+    .heroTitle{
+
+      font-size: 2.5em; /* Asegúrate de que tenga un tamaño visible */
+      font-weight: 700;
     }
-  
+
   
   
     /* Terminal en la parte baja izquierda, max 50% ancho */
@@ -469,17 +499,19 @@
   
     /* Avatar a la derecha */
     .avatarContainer {
-      flex: 1;
+     
       justify-content: center;
       align-items: center;
+      margin-right: 5%;
+      background-color: red;
       
     }
   
     /* Skills encima del avatar */
     .skillAtomsContainer {
       position: absolute;
-      top: 15%;
-      left: 120%;
+      top: 20%;
+      right: 10%;
       transform: translateY(-50%);
     }
   
