@@ -55,18 +55,9 @@
 }
 
 
-@media (min-width: 768px){
-
-    .dynamicManifestContainer {
-        padding-left: 38px;
-    }
-}
-
 @media (min-width: 1024px){
 
     .dynamicManifestContainer {
-       position: absolute;
-       left: 100px;
-       bottom: 50px;
+      background-color: violet;
     }
 }

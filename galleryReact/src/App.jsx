@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useRef,useState,useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './index.css';
 
 import styles from './App.module.css';
@@ -26,7 +26,7 @@ function App() {
       window.history.scrollRestoration = 'manual';
     }
   }, []);
-  
+
 
   const manifestoPhrases = [
     "Transformo ideas en código.",
@@ -44,7 +44,7 @@ function App() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  
+
   useEffect(() => {
     console.log('Estado del modal (isModalOpen):', isModalOpen);
   }, [isModalOpen]);
@@ -59,62 +59,74 @@ function App() {
       {/* --- EL MODAL DE PROYECTOS QUE SE MUESTRA CONDICIONALMENTE --- */}
       {/* Solo se renderiza si isModalOpen es true, y le pasamos la función handleCloseModal */}
       {isModalOpen && <ProjectsModal onClose={handleCloseModal} />}
-      
 
-     
+
+
       <section
         ref={heroSectionRef}
         className={styles.heroSection}
       >
-        
-        {/* --- TÍTULO PRINCIPAL --- */}
-        <div className={styles.titleBlock}>
-              <AnimatedText
-                text="MagupeDev"
-                className={styles.heroTitle}
-                type="char"
-                delay={0.03}
-              />
-            </div>
-
-        {/* --- SUBTÍTULO --- */}
-        <div className={styles.subtitleBlock}>
-              <AnimatedText
-                text="Desarrollador Front-End | Entusiasta UI/UX"
-                className={styles.heroSubtitle}
-                type="word"
-                delay={0.08}
-              />
+        <div className={styles.leftColumnGrid}>
+          {/* --- TÍTULO PRINCIPAL --- */}
+          <div className={styles.titleBlock}>
+            <AnimatedText
+              text="MagupeDev"
+              className={styles.heroTitle}
+              type="char"
+              delay={0.03}
+            />
           </div>
 
-        {/* --- GEAR MENU --- */}
-        <div className={styles.gearMenuContainer}>
-          {/* GearMenu ya está fijo en la pantalla, pero aquí podemos agregar un espacio */}
-        </div>
-
-        {/* --- HERO AVATAR --- */}
-        <div className={styles.avatarContainer}>
-          <HeroAvatar className={styles.heroAvatar} />
-        </div>
-
-        {/* --- SKILL ATOMS (justo encima del avatar) --- */}
-        <div className={styles.skillAtomsContainer}>
-          <SkillAtoms className={styles.skillAtomsAbsolute} />
-        </div>
-
-        {/* --- AI TERMINAL ---*/}
-        <div className={styles.aiTerminalContainer}>
-            <AITerminal />
+          {/* --- SUBTÍTULO --- */}
+          <div className={styles.subtitleBlock}>
+            <AnimatedText
+              text="Desarrollador Front-End | Entusiasta UI/UX"
+              className={styles.heroSubtitle}
+              type="word"
+              delay={0.08}
+            />
           </div>
-        
-        {/* --- MANIFIESTO (opcional, al final) --- */}
-        <div className={styles.manifestoBlock}>
+          {/* --- MANIFIESTO (opcional, al final) --- */}
+          <div className={styles.manifestoBlock}>
             <DynamicManifest
               phrases={manifestoPhrases} // Le pasamos las frases
             />
+          </div>
+
+          {/* --- GEAR MENU --- */}
+          <div className={styles.gearMenuContainer}>
+            {/* GearMenu ya está fijo en la pantalla, pero aquí podemos agregar un espacio */}
+          </div>
+
+          {/* --- AI TERMINAL ---*/}
+          <div className={styles.aiTerminalContainer}>
+            <AITerminal />
+          </div>
+
+          
+
         </div>
 
-       
+
+
+        <div className={styles.rightColumnGrid}>
+          {/* --- HERO AVATAR --- */}
+          <div className={styles.avatarContainer}>
+            <HeroAvatar className={styles.heroAvatar} />
+          </div>
+
+          {/* --- SKILL ATOMS (justo encima del avatar) --- */}
+          <div className={styles.skillAtomsContainer}>
+            <SkillAtoms className={styles.skillAtomsAbsolute} />
+          </div>
+
+        </div>
+
+
+
+
+
+
       </section>
     </div>
   );

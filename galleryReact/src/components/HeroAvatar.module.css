@@ -52,26 +52,7 @@ z-index: -2; /* Aseguramos que esté detrás del avatar */
 
 
 /* --- MEDIA QUERIES PARA DISPOSITIVOS MÓVILES (max-width: 768px) --- */
-@media (max-width: 768px) {
-/*
-  Reducimos el tamaño del contenedor del avatar y centramos en la pantalla.
-  Esto hará que la imagen del avatar y su sombra sean más pequeñas.
-*/
-.avatarContainer {
-  max-width: 300px; /* Tamaño más apropiado para móviles */
-  margin: -5px auto; /* Centramos el contenedor */
-}
 
-/*
-  Ajustamos la sombra para que se vea mejor con el avatar más pequeño.
-  Reducimos el "aplanamiento" (scale) y el desenfoque.
-*/
-.avatarContainer::after {
-  bottom: -15px; /* Ajustamos la posición */
-  transform: translate(-50%, 0) rotateX(80deg) scale(0.9, 6); /* Hacemos la sombra más pequeña */
-  filter: blur(5px) invert(1) opacity(0.2); /* Menos desenfoque y opacidad */
-}
-}
 
 @media (min-width: 1024px) {
   .avatarContainer {
@@ -80,7 +61,7 @@ z-index: -2; /* Aseguramos que esté detrás del avatar */
     margin-left: 100px;
   }
   .avatarImage {
-    margin-right: 20rem ;
+   
     
   }
 }

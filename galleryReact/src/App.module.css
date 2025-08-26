@@ -2,36 +2,37 @@
 
 /*
   --- ESTILOS BASE (MÓVILES - Por defecto) ---
-  Diseño en columna centrada con scroll vertical
+  Diseño en columna centrada con scroll vertical*/
 
 * {
   outline: 1px solid red;
 }
-  */
+
 
 .mainContainer {
-  min-height: 100vh;
+  max-height: 100vh;
   width: 100vw;
   position: relative;
- 
+
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .heroSection {
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  
+
   padding: 20px;
   /*min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
   box-sizing: border-box;
   background-color: #000000;
- /* overflow-x: hidden; FF5714   FDFFFC*/
-   
+  /* overflow-x: hidden; FF5714   FDFFFC*/
+
 }
 
 /* Contenedor del título principal */
@@ -41,14 +42,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 30px; /* Reducido de 80px a 30px para estar más arriba */
-  margin-bottom: 5px; /* Reducido de 20px a 5px para acercar al subtítulo */
+  margin-top: 30px;
+  /* Reducido de 80px a 30px para estar más arriba */
+  margin-bottom: 5px;
+  /* Reducido de 20px a 5px para acercar al subtítulo */
 }
 
 /* Contenedor del GearMenu (espacio) */
 .gearMenuContainer {
   width: 100%;
-  height: 60px; /* Espacio para el GearMenu fijo */
+  height: 60px;
+  /* Espacio para el GearMenu fijo */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,15 +64,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 29px 0; /* Reducido de 20px a 10px para subir el avatar */
+  margin: 29px 0;
+  /* Reducido de 20px a 10px para subir el avatar */
 }
 
 /* Contenedor de SkillAtoms (justo encima del avatar) */
 .skillAtomsContainer {
- 
+
   position: absolute;
-  
- 
+
+
   z-index: 10;
 }
 
@@ -78,7 +83,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2px 0; /* Reducido de 20px a 5px para acercar al título */
+  margin: 2px 0;
+  /* Reducido de 20px a 5px para acercar al título */
 }
 
 /* Contenedor de AI Terminal */
@@ -87,7 +93,7 @@
   max-width: 400px;
   margin: 40px auto;
   padding: 27px 20px;
-  margin:0 ;
+  margin: 0;
 }
 
 /* Contenedor del manifiesto */
@@ -102,11 +108,12 @@
   margin-top: 0;
 }
 
-.heroTitle, .heroSubtitle {
+.heroTitle,
+.heroSubtitle {
   font-family: 'Inter', sans-serif;
   color: #fff;
   text-align: center;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
 }
 
@@ -128,7 +135,7 @@
   margin-top: 1em;
   max-width: 90%;
   line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
@@ -147,15 +154,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   top: -40px;
   right: 140px;
 }
 
 .gearButton {
   position: fixed;
-  bottom: 20px; /* Cambiado de top a bottom */
-  right: 20px; /* Cambiado de left a right */
+  bottom: 20px;
+  /* Cambiado de top a bottom */
+  right: 20px;
+  /* Cambiado de left a right */
   background: none;
   border: none;
   cursor: pointer;
@@ -292,137 +301,6 @@
   --- MEDIA QUERY PARA TABLETS (min-width: 768px) ---
   Mantenemos el diseño en columna pero con mejor espaciado
 */
-@media (min-width: 668px) {
-  .heroSection {
-    padding: 40px 20px;
-    gap: 10px; /* Más espacio en tablets */
-  }
-
-  .titleBlock {
-    margin-top: 10px;
-  }
-  .subtitleBlock {
-    margin: -19px 0; /* Reducido de 20px a 5px para acercar al título */
-  }
-
-  .heroTitle {
-    font-size: 3.5em;
-    
-    
-  }
-
-  .heroSubtitle {
-    font-size: 1.4em;
-    
-  }
-
-  .aiTerminalContainer {
-    max-width: 700px;
-  }
-
-  .manifestoBlock {
-    max-width: 700px;
-    font-size: 1.3em;
-  }
-
-  .skillAtomsAbsolute {
-    max-width: 600px;
-  }
-
-  .gearButton {
-    width: 100%;
-    height: 100%;
-  }
-  
-.gearIcon {
-  width: 100%;
-  height: 100%;
-}
-
-  .modalContent {
-    padding: 30px;
-    max-width: 90%;
-  }
-
-  .modalTitle {
-    font-size: 2.5rem;
-  }
-
-  .projectsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-
-  .projectPoster {
-    width: 200px;
-    height: 300px;
-  }
-}
-@media (min-width: 768px) {
-  .heroSection {
-    padding: 40px 20px;
-    gap: 5px; /* Más espacio en tablets */
-  }
-
-  .titleBlock {
-    margin-top: 10px;
-  }
-  .subtitleBlock {
-    margin: -19px 0; /* Reducido de 20px a 5px para acercar al título */
-  }
-
-  .heroTitle {
-    font-size: 3.5em;
-    
-    
-  }
-
-  .heroSubtitle {
-    font-size: 1.4em;
-  
-  }
-
-  .aiTerminalContainer {
-    max-width: 600px;
-  }
-
-  .manifestoBlock {
-    max-width: 700px;
-    font-size: 1.3em;
-  }
-
-  .skillAtomsAbsolute {
-    max-width: 600px;
-  }
-
-  .gearButton {
-    width: 50px;
-    height: 50px;
-  }
-
-  .modalContent {
-    padding: 30px;
-    max-width: 90%;
-  }
-
-  .modalTitle {
-    font-size: 2.5rem;
-  }
-
-  .projectsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-
-  .projectPoster {
-    width: 200px;
-    height: 300px;
-  }
-}
-
-
-
-
 
 
 
@@ -433,98 +311,96 @@
 */
 
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) {
 
-
-/*
-    .heroSection {
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: space-between;
-      height: 100vh;
-      padding: 0;
-      background-color: green;
-      position: absolute;
-    }
-      */
-      .heroSection {
-        /* Quita las propiedades de Flexbox que tenías aquí */
-        display: grid; /* Esta es la clave */
-        grid-template-columns: 1fr 1fr; /* Dividimos el espacio en dos columnas iguales */
-        height: 100vh;
-        padding: 0;
-      }
-      .titleBlock, .subtitleBlock, .aiTerminalContainer, .manifestoBlock {
-        grid-column: 1 / 2; /* Colocamos estos elementos en la primera columna */
-        /* Puedes seguir usando 'position: absolute' o Flexbox para organizarlos dentro de la columna */
-      }
-
-      .avatarContainer, .skillAtomsContainer {
-        grid-column: 2 / 3; /* Colocamos estos elementos en la segunda columna */
-      }
-  
-    /* Bloque del título a la izquierda en vertical */
-    .titleBlock, .subtitleBlock {
-      /* Mueve estos estilos al selector .heroTitle */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0px;
-      background-color: #377555;
-      width: 20px;
-    }
-    
-    .heroTitle, .subtitleBlock {
-      writing-mode: vertical-rl; /* Aplica el modo de escritura al texto */
-      transform: rotate(180deg); /* Rótalo 180 grados para que se lea de arriba a abajo */
-      /* Quita cualquier otro estilo que tengas aquí que pueda interferir */
-     
-    }
-    .heroTitle{
-
-      font-size: 2.5em; /* Asegúrate de que tenga un tamaño visible */
-      font-weight: 700;
-    }
-
-  
-  
-    /* Terminal en la parte baja izquierda, max 50% ancho */
-    .aiTerminalContainer {
-      position: absolute;
-    left: 100px;
-    top: 10px;
-    height: 400px;
-    }
-  
-    /* Avatar a la derecha */
-    .avatarContainer {
-     
-      justify-content: center;
-      align-items: center;
-      margin-right: 5%;
-      background-color: red;
-      
-    }
-  
-    /* Skills encima del avatar */
-    .skillAtomsContainer {
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      transform: translateY(-50%);
-    }
-  
-    /* Botón arriba a la derecha */
-    .gearButton {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      bottom: auto;
-    }
+  /* PASO 1: Establecer la grilla principal en .heroSection */
+  .heroSection {
+    display: grid;
+    /* Dividimos la pantalla en dos columnas iguales */
+    grid-template-columns: 2fr 1fr;
+    height: 100vh;
+    padding: 0;
   }
-  
- 
-  
-  /* ---------------------------------------------------- */
-  
+
+  /* PASO 2: Crear los contenedores para cada columna */
+  .leftColumnGrid {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    /* <-- Cambia a 'column' para apilar los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    /* Aseguramos que ocupe todo el espacio disponible */
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .rightColumnGrid {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    /* Aseguramos que ocupe todo el espacio disponible */
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+  }
+
+  /* PASO 3: Reorganiza tu App.jsx para usar estos contenedores */
+  /* Debes envolver los elementos de la izquierda y de la derecha en los divs */
+
+  /* Ahora, los estilos para cada elemento */
+
+  /* Estilos para el texto vertical */
+  .titleBlock {
+    /* Mantenemos tus estilos de Flexbox aquí */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #377555;
+    /* Eliminamos el 'width: 20px;' para que se ajuste al texto */
+  }
+
+  .heroTitle,
+  .heroSubtitle {
+    /* Usamos el subtítulo también si lo quieres en vertical */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .heroTitle {
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+
+  /* Estilos para los componentes en cada columna */
+
+
+  .avatarContainer {
+    /* Quita el margin-right que tenías */
+    background-color: red;
+    /* Tu color de prueba */
+    position: relative;
+
+
+
+  }
+
+  .skillAtomsAbsolute {
+
+    background-color: blue;
+  }
+  .skillAtomsContaine{
+    position: absolute;
+    top: 20px;
+  }
+
+
+  /* ... y así con los demás elementos ... */
+}

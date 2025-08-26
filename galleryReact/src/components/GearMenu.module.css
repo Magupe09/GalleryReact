@@ -25,12 +25,6 @@
   outline: none;
 }
 
-/* Para pantallas más grandes, ajustamos la posición */
-@media (min-width: 768px) {
-  .gearButton {
-    right: 10px; /* Más espacio en tablets */
-  }
-}
 
 @media (min-width: 1024px) {
   .gearButton {
