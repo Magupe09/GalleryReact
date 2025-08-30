@@ -11,13 +11,14 @@
 
 .mainContainer {
   max-height: 100vh;
-  width: 100vw;
+  max-width: 85vw;
   position: relative;
 
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  margin: 0 auto;
 }
 
 .heroSection {
@@ -25,73 +26,67 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 20px;
   /*min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
   box-sizing: border-box;
   background-color: #000000;
+  gap: 20px;
   /* overflow-x: hidden; FF5714   FDFFFC*/
+
+}
+.leftColumnGrid{
+  display: flex;
+  flex-direction: column;
 
 }
 
 /* Contenedor del título principal */
 .titleBlock {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+ 
   margin-top: 30px;
   /* Reducido de 80px a 30px para estar más arriba */
   margin-bottom: 5px;
+  
   /* Reducido de 20px a 5px para acercar al subtítulo */
 }
 
 /* Contenedor del GearMenu (espacio) */
-.gearMenuContainer {
-  width: 100%;
-  height: 60px;
-  /* Espacio para el GearMenu fijo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /* Contenedor del avatar */
 .avatarContainer {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 29px 0;
+  align-items: flex-start;
+  margin: 2px 0;
   /* Reducido de 20px a 10px para subir el avatar */
 }
 
 /* Contenedor de SkillAtoms (justo encima del avatar) */
-.skillAtomsContainer {
-
-  position: absolute;
-
-
-  z-index: 10;
-}
 
 /* Contenedor del subtítulo */
 .subtitleBlock {
-  width: 100%;
-  display: flex;
+  
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   margin: 2px 0;
-  /* Reducido de 20px a 5px para acercar al título */
+ /* background-color: violet;
+   Reducido de 20px a 5px para acercar al título */
 }
 
 /* Contenedor de AI Terminal */
 .aiTerminalContainer {
   width: 100%;
-  max-width: 400px;
-  margin: 40px auto;
+  max-width: 420px;
+  margin: 0 auto;
   padding: 27px 20px;
   margin: 0;
 }
@@ -99,12 +94,12 @@
 /* Contenedor del manifiesto */
 .manifestoBlock {
   width: 100%;
-  max-width: 350px;
-  margin: 40px auto;
+  max-width: 450px;
+ 
   text-align: center;
-  font-size: .8em;
+  font-size: 1em;
   line-height: 1.6;
-  padding: 0 20px;
+  padding: 5px 20px;
   margin-top: 0;
 }
 
@@ -146,6 +141,10 @@
   margin: 30px auto;
   padding: 0 20px;
 }
+.skillAtomsContainer{
+  position: relative;
+  background-color: blue;
+}
 
 .skillAtomsAbsolute {
   width: 100%;
@@ -155,8 +154,9 @@
   justify-content: center;
   align-items: center;
 
-  top: -40px;
+  top: 100px;
   right: 140px;
+  background-color: red;
 }
 
 .gearButton {
@@ -326,14 +326,16 @@
   .leftColumnGrid {
     grid-column: 1 / 2;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     /* <-- Cambia a 'column' para apilar los elementos verticalmente */
     justify-content: center;
     align-items: center;
-    background-color: gold;
+   /*background-color: gold;*/
+    flex-wrap: wrap;
     /* Aseguramos que ocupe todo el espacio disponible */
     height: 100%;
     width: 100%;
+    gap: 10px;
 
   }
 
@@ -343,8 +345,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: green;
-    /* Aseguramos que ocupe todo el espacio disponible */
+    /*background-color: green;
+     Aseguramos que ocupe todo el espacio disponible */
     height: 100%;
     width: 100%;
     position: relative;
@@ -362,9 +364,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #377555;
-    /* Eliminamos el 'width: 20px;' para que se ajuste al texto */
+    align-items: flex-start;
+    /*background-color: #377555;
+     Eliminamos el 'width: 20px;' para que se ajuste al texto */
   }
 
   .heroTitle,
@@ -372,20 +374,27 @@
     /* Usamos el subtítulo también si lo quieres en vertical */
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    
   }
 
   .heroTitle {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 700;
   }
+  .heroSubtitle {
+    
+    font-size: 1em;
+    font-weight: 100;
+  }
+
 
   /* Estilos para los componentes en cada columna */
 
 
   .avatarContainer {
     /* Quita el margin-right que tenías */
-    background-color: red;
-    /* Tu color de prueba */
+   /*  background-color: red;
+    Tu color de prueba */
     position: relative;
 
 
@@ -394,11 +403,12 @@
 
   .skillAtomsAbsolute {
 
-    background-color: blue;
+   /* background-color: blue;*/
   }
-  .skillAtomsContaine{
+  .skillAtomsContainer{
     position: absolute;
     top: 20px;
+    right: 100px;
   }
 
 

@@ -1,14 +1,4 @@
 
-/* Contenedor principal del componente SkillAtoms */
-.skillAtomsContainer {
-  position: relative; /* Necesario para posicionar el .orbitSystem dentro de él */
-  height: 300px; /* Ajusta el tamaño total del área de los skills */
-  width: 300px;  /* Ajusta el tamaño total del área de los skills */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 1px dashed red; /* Descomenta para depurar y ver los límites de este contenedor */
-}
 
 /* Contenedor del Sistema de Órbitas (el "átomo" central) */
 /* Todos los wrappers de órbita individuales se posicionan absolutamente dentro de este. */

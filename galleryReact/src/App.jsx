@@ -86,22 +86,24 @@ function App() {
               delay={0.08}
             />
           </div>
+
+          {/* --- AI TERMINAL ---*/}
+          <div className={styles.aiTerminalContainer}>
+            <AITerminal />
+          </div>
           {/* --- MANIFIESTO (opcional, al final) --- */}
           <div className={styles.manifestoBlock}>
             <DynamicManifest
               phrases={manifestoPhrases} // Le pasamos las frases
             />
-          </div>
+          </div> 
 
           {/* --- GEAR MENU --- */}
           <div className={styles.gearMenuContainer}>
             {/* GearMenu ya está fijo en la pantalla, pero aquí podemos agregar un espacio */}
           </div>
 
-          {/* --- AI TERMINAL ---*/}
-          <div className={styles.aiTerminalContainer}>
-            <AITerminal />
-          </div>
+          
 
           
 

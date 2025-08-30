@@ -1,7 +1,7 @@
 .gearButton {
   position: fixed;
   bottom: 20px;
-  right: -92px; /* Valor negativo para que se vea pegado al borde en pantallas pequeñas */
+  right: 35px; /* Valor negativo para que se vea pegado al borde en pantallas pequeñas */
   background: none;
   border: none;
   cursor: pointer;
@@ -26,11 +26,6 @@
 }
 
 
-@media (min-width: 1024px) {
-  .gearButton {
-    right: 20px; /* Aún más espacio en desktop */
-  }
-}
 
 
  
