@@ -66,6 +66,9 @@ function App() {
         ref={heroSectionRef}
         className={styles.heroSection}
       >
+
+
+
         <div className={styles.leftColumnGrid}>
           {/* --- TÍTULO PRINCIPAL --- */}
           <div className={styles.titleBlock}>
@@ -96,20 +99,18 @@ function App() {
             <DynamicManifest
               phrases={manifestoPhrases} // Le pasamos las frases
             />
-          </div> 
+          </div>
 
           {/* --- GEAR MENU --- */}
           <div className={styles.gearMenuContainer}>
             {/* GearMenu ya está fijo en la pantalla, pero aquí podemos agregar un espacio */}
           </div>
 
-          
 
-          
+
+
 
         </div>
-
-
 
         <div className={styles.rightColumnGrid}>
           {/* --- HERO AVATAR --- */}
@@ -123,6 +124,8 @@ function App() {
           </div>
 
         </div>
+
+
 
 
 

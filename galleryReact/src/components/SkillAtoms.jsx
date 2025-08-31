@@ -61,7 +61,7 @@ function SkillAtoms({ className = '' }) {
                 style={{
                   position: 'absolute',
                   left: '50%',
-                  top: '62%',
+                  top: '100%',
                   transform: 'translate(-50%, -50%)',
                 }}
                 animate={{ rotate: 360 * skill.direction }}

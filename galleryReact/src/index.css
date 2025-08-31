@@ -3,16 +3,21 @@
 
 /* --- REGLAS CRÍTICAS PARA EL SCROLL --- */
 /* Asegura que HTML y BODY ocupen el 100% de la altura de la ventana */
-html, body {
-  margin: 0;        /* Elimina el margen predeterminado del navegador */
-  padding: 0;       /* Elimina el padding predeterminado del navegador */
-  width: 100%;      /* Asegura que ocupen el 100% del ancho del viewport */
-  height: 100%;     /* ¡CRÍTICO! Ocupan el 100% de la altura del viewport */
-  min-height: 100%; /* Asegura que puedan crecer más allá del 100% si es necesario */
- /*  overflow-y: hidden; Evita el scroll horizontal no deseado 
-  scroll-behavior: auto;   Comentado para evitar scroll automático no deseado */
+html {
+  /* No le des height/min-height al html, deja que crezca con el body */
+  height: 100%;
+  width: 100%;
 }
 
+body {
+  margin: 0; 
+  padding: 0; 
+  width: 100%;
+  height: 100%;
+  /* CRÍTICO: oculta el overflow en el body para que el scroll lo maneje el #root */
+  overflow: hidden; 
+}
+  
 /*
 * {
   outline: 1px solid rgba(255, 0, 0, 0.3);
@@ -25,6 +30,7 @@ html, body {
   min-height: 100%; /* Permite que #root crezca para contener todo el contenido */
   display: flex;    /* Asegura que #root use flexbox para que su hijo principal se estire */
   flex-direction: column; /* Organiza los hijos en columna */
+  overflow-y: auto; 
 }
 
 /* --- FIN DE REGLAS CRÍTICAS --- */

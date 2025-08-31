@@ -1,7 +1,7 @@
 .gearButton {
   position: fixed;
   bottom: 20px;
-  right: 35px; /* Valor negativo para que se vea pegado al borde en pantallas pequeñas */
+  right: -35px; /* Valor negativo para que se vea pegado al borde en pantallas pequeñas */
   background: none;
   border: none;
   cursor: pointer;
