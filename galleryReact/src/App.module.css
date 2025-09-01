@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .heroSection {
@@ -35,7 +35,7 @@
   /*min-height: 100vh; /* Hacemos la sección mucho más larga para scroll */
   box-sizing: border-box;
   background-color: #000000;
-  gap: 20px;
+  gap: 4px;
   /* overflow-x: hidden; FF5714   FDFFFC*/
 
 }
@@ -71,7 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 2px 0;
+  margin: -10px 0;
   /* Reducido de 20px a 10px para subir el avatar */
 }
 
@@ -101,11 +101,11 @@
 .manifestoBlock {
   width: 100%;
   max-width: 450px;
- 
+  
   text-align: center;
-  font-size: 0.5em;
+  font-size: 0.6em;
   line-height: 1.6;
-  padding: 5px 20px;
+  padding-left:20px;
   margin-top: 0;
 }
 
@@ -150,12 +150,12 @@
 }
 .skillAtomsContainer{
  
-  background-color: blue;
+  
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 100px;
-  right: 200px;
+  top: 70px;
+  right: 150px;
   
 }
 
@@ -170,20 +170,7 @@
   background-color: red;
 }
 
-.gearButton {
-  position: fixed;
-  bottom: 20px;
-  /* Cambiado de top a bottom */
-  right: 10px;
-  /* Cambiado de left a right */
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1000;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-}
+
 
 .gearIcon {
   width: 100%;
@@ -325,12 +312,29 @@
 @media (min-width: 1024px) {
 
   /* PASO 1: Establecer la grilla principal en .heroSection */
+  
+.mainContainer {
+ 
+  
+  position: relative;
+
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  
+  margin: 15px auto;
+  
+ 
+}
   .heroSection {
     display: grid;
     /* Dividimos la pantalla en dos columnas iguales */
     grid-template-columns: 2fr 1fr;
-    height: 100vh;
+    height: 93vh;
     padding: 0;
+    max-width: 80%;
+    margin: 10px auto;
+    
   }
 
   /* PASO 2: Crear los contenedores para cada columna */
@@ -344,10 +348,39 @@
    /*background-color: gold;*/
     flex-wrap: wrap;
     /* Aseguramos que ocupe todo el espacio disponible */
-    height: 100%;
+    height: 90%;
     width: 100%;
     gap: 10px;
+    margin-top: 20px;
 
+  }
+  .aiTerminalContainer {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 27px 20px;
+    margin: 0;
+  }
+  .manifestoBlock {
+    width: 100%;
+    max-width: 450px;
+    
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.6;
+    padding-left:20px;
+    margin-bottom: 100px;
+  }
+  .skillAtomsContainer{
+ 
+  
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    right: 200px;
+    
+    
   }
 
   .rightColumnGrid { 
@@ -412,15 +445,7 @@
 
   }
 
-  .skillAtomsAbsolute {
-
-   /* background-color: blue;*/
-  }
-  .skillAtomsContainer{
-    position: absolute;
-    top: 20px;
-    right: 100px;
-  }
+  
 
 
   /* ... y así con los demás elementos ... */

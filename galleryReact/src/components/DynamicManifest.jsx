@@ -40,7 +40,7 @@ function DynamicManifest({ phrases, className = '' }) {
     visible: (i) => ({ // 'i' es el index del item, pasado por la prop 'custom'
       opacity: 1,
       x: 0,        // ← Permanece en su posición final
-      y: i * 35,  // Se apila verticalmente
+      y: i * 20,  // Se apila verticalmente
       scale: 1,   // ← Solo cambia la escala
       transition: {
         type: "spring",

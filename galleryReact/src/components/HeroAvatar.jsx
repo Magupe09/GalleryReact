@@ -24,7 +24,7 @@ function HeroAvatar({ className = '' }) {
         alt="Tu Avatar Profesional"
         style={{
           maxWidth: '270%',
-          height: '500px',
+          height: '400px',
           display: 'block'
         }}
       />

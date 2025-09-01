@@ -128,7 +128,7 @@ function AITerminal({ className = '' }) {
               className={styles.terminalInput}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Escribe tu pregunta aquí..."
+              placeholder="Pregunta aquí..."
               disabled={isLoading}
             />
             <button type="submit" className={styles.terminalSubmitButton} disabled={isLoading}>
