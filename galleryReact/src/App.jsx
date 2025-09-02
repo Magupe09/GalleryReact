@@ -70,48 +70,48 @@ function App() {
 
 
         <div className={styles.leftColumnGrid}>
-          {/* --- TÍTULO PRINCIPAL --- */}
-          <div className={styles.titleBlock}>
-            <AnimatedText
-              text="MagupeDev"
-              className={styles.heroTitle}
-              type="char"
-              delay={0.03}
-            />
+
+          <div className={styles.column1}>
+            {/* --- TÍTULO PRINCIPAL --- */}
+            <div className={styles.titleBlock}>
+              <AnimatedText
+                text="MagupeDev"
+                className={styles.heroTitle}
+                type="char"
+                delay={0.03}
+              />
+            </div>
+
+            {/* --- SUBTÍTULO --- */}
+            <div className={styles.subtitleBlock}>
+              <AnimatedText
+                text="Desarrollador Front-End | Entusiasta UI/UX"
+                className={styles.heroSubtitle}
+                type="word"
+                delay={0.08}
+              />
+            </div>
           </div>
+          {/* Segunda columna: Contenedor para los dos hijos restantes */}
+          <div className={styles.column2}>
+            {/* --- AI TERMINAL ---*/}
+            <div className={styles.aiTerminalContainer}>
+              <AITerminal />
+            </div>
+            {/* --- MANIFIESTO (opcional, al final) --- */}
+            <div className={styles.manifestoBlock}>
+              <DynamicManifest
+                phrases={manifestoPhrases} // Le pasamos las frases
+              />
+            </div>
 
-          {/* --- SUBTÍTULO --- */}
-          <div className={styles.subtitleBlock}>
-            <AnimatedText
-              text="Desarrollador Front-End | Entusiasta UI/UX"
-              className={styles.heroSubtitle}
-              type="word"
-              delay={0.08}
-            />
+            {/* --- GEAR MENU --- */}
+            <div className={styles.gearMenuContainer}>
+              {/* GearMenu ya está fijo en la pantalla, pero aquí podemos agregar un espacio */}
+            </div>
+
           </div>
-
-          {/* --- AI TERMINAL ---*/}
-          <div className={styles.aiTerminalContainer}>
-            <AITerminal />
-          </div>
-          {/* --- MANIFIESTO (opcional, al final) --- */}
-          <div className={styles.manifestoBlock}>
-            <DynamicManifest
-              phrases={manifestoPhrases} // Le pasamos las frases
-            />
-          </div>
-
-          {/* --- GEAR MENU --- */}
-          <div className={styles.gearMenuContainer}>
-            {/* GearMenu ya está fijo en la pantalla, pero aquí podemos agregar un espacio */}
-          </div>
-
-
-
-
-
         </div>
-
         <div className={styles.rightColumnGrid}>
           {/* --- HERO AVATAR --- */}
           <div className={styles.avatarContainer}>
@@ -132,8 +132,8 @@ function App() {
 
 
 
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
 

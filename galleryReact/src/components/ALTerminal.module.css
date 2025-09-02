@@ -144,4 +144,22 @@
   }
   
 
+
   
+@media (min-width: 1024px) {
+  
+  .terminalContainer {
+    background-color: white; /* Fondo oscuro y profundo, como una terminal real */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.3); /* Sombra de brillo azul sutil y profesional */
+    font-family: 'Consolas', 'Monaco', monospace; /* Fuente monoespaciada para look de terminal */
+    color: black; /* Color de texto general más suave */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: 95%;
+    height: 100%;
+    /*min-height: 380px; /* Altura mínima ligeramente aumentada para más espacio */
+    border: 1px solid rgba(40, 100, 150, 0.5); /* Borde sutil azul oscuro */
+  }
+}
