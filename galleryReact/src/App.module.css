@@ -3,12 +3,13 @@
 /*
   --- ESTILOS BASE (MÓVILES - Por defecto) ---
   Diseño en columna centrada con scroll vertical 
+ 
 
 * {
   outline: 1px solid red;
 }
-  
-*/
+   */
+
 
 
 .mainContainer {
@@ -42,7 +43,13 @@
 .leftColumnGrid{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+}
+.column1{
+  display: flex;
+  flex-direction: column;
 }
 .rightColumnGrid { 
   position: relative;
@@ -93,7 +100,7 @@
 /* Contenedor de AI Terminal */
 .aiTerminalContainer {
   width: 100%;
-  max-width: 250px;
+  max-width: 280px;
   margin: 0 auto;
   padding: 27px 20px;
   margin: 0;
@@ -102,10 +109,10 @@
 /* Contenedor del manifiesto */
 .manifestoBlock {
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   
   text-align: center;
-  font-size: 0.6em;
+  font-size: 0.7em;
   line-height: 1.6;
   padding-left:20px;
   margin-top: 0;
@@ -302,7 +309,204 @@
   Mantenemos el diseño en columna pero con mejor espaciado
 */
 
+@media (min-width: 400px) {
 
+  /* PASO 1: Establecer la grilla principal en .heroSection */
+  
+.mainContainer {
+ 
+  
+  position: relative;
+
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  
+  margin: 20px ;
+  
+ 
+}
+  .heroSection {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    
+    padding: 0;
+    max-width: 100%;
+    margin: 10px 20px;
+    
+  }
+
+  .leftColumnGrid {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Crea dos columnas principales */
+    gap: 10px; /* Espacio entre las columnas */
+    align-items: flex-start; /* Evita que las columnas se estiren */
+  }
+  
+  /* Contenedor para los dos primeros hijos */
+  .column1 {
+    display: flex;
+    flex-direction: row; /* Apila los hijos uno al lado del otro */
+    gap: 5px; /* Espacio entre el primer y segundo hijo */
+    /* align-items: flex-start;  // Si es necesario */
+  }
+  
+  /* Contenedor para los dos hijos restantes */
+  .column2 {
+    display: flex;
+    flex-direction: column; /* Apila los hijos uno encima del otro */
+    gap: 5px; /* Espacio entre el tercer y cuarto hijo */
+    /* align-items: flex-start; // Si es necesario */
+  }
+  .aiTerminalContainer {
+    grid-column: 2;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 27px 20px;
+    margin: 0;
+    height: 300px;
+  }
+  .manifestoBlock {
+    width: 100%;
+    max-width: 300px;
+    
+    text-align: center;
+    font-size: 0.6em;
+    line-height: 1.6;
+    padding-left:20px;
+    grid-column: 2;
+   
+    height: 100px;
+  }
+  .skillAtomsContainer{
+ 
+  
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    
+    
+  }
+
+  .rightColumnGrid { 
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: green;
+     Aseguramos que ocupe todo el espacio disponible */
+    height: 45%;
+    width: 100%;
+    position: relative;
+
+  }
+
+  /* PASO 3: Reorganiza tu App.jsx para usar estos contenedores */
+  /* Debes envolver los elementos de la izquierda y de la derecha en los divs */
+
+  /* Ahora, los estilos para cada elemento */
+
+  /* Estilos para el texto vertical */
+  .titleBlock {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /*background-color: #377555;
+     Eliminamos el 'width: 20px;' para que se ajuste al texto */
+  }
+
+  .heroTitle,
+  .heroSubtitle {
+    /* Usamos el subtítulo también si lo quieres en vertical */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    
+  }
+
+  .heroTitle {
+    font-size: 2.9em;
+    font-weight: 700;
+  }
+  .heroSubtitle {
+    
+    font-size: 1em;
+    font-weight: 200;
+  }
+
+
+  /* Estilos para los componentes en cada columna */
+
+
+  .avatarContainer {
+    /* Quita el margin-right que tenías */
+   /*  background-color: red;
+    Tu color de prueba */
+    position: relative;
+
+
+
+  }
+
+  
+
+
+  /* ... y así con los demás elementos ... */
+}
+
+
+@media (min-width: 650px) {
+  .mainContainer {
+ 
+  
+    position: relative;
+  
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    
+    margin: 40px ;
+    
+   
+  }
+    .heroSection {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+  
+      
+      padding: 0;
+      max-width: 100%;
+      margin: 10px 20px;
+      
+    }
+    .heroTitle {
+      font-size: 3em;
+      font-weight: 700;
+    }
+    .heroSubtitle {
+      
+      font-size: 1em;
+      font-weight: 200;
+    }
+    .manifestoBlock {
+      width: 100%;
+      max-width: 350px;
+      
+      text-align: center;
+      font-size: 0.8em;
+      line-height: 1.6;
+      padding-left:20px;
+      grid-column: 2;
+     
+      height: 100px;
+    }
+}
 
 
 /*
@@ -344,6 +548,7 @@
     grid-template-columns: 1fr 3fr; /* Crea dos columnas principales */
     gap: 20px; /* Espacio entre las columnas */
     align-items: flex-start; /* Evita que las columnas se estiren */
+    margin-top: 90px;
   }
   
   /* Contenedor para los dos primeros hijos */

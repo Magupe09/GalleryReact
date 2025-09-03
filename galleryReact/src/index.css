@@ -15,7 +15,7 @@ body {
   width: 100vw;
   height: 100vh;
   /* CRÍTICO: oculta el overflow en el body para que el scroll lo maneje el #root */
-  overflow: hidden; 
+ /* overflow: hidden; */
 }
   
 /*
@@ -29,8 +29,9 @@ body {
   height: 100%;     /* ¡CRÍTICO! También debe ocupar el 100% de la altura del body */
   min-height: 100%; /* Permite que #root crezca para contener todo el contenido */
   display: flex;    /* Asegura que #root use flexbox para que su hijo principal se estire */
-  flex-direction: column; /* Organiza los hijos en columna */
+  flex-direction: column; /* Organiza los hijos en columna 
   overflow-y: auto; 
+  overflow-x: hidden;*/
 }
 
 /* --- FIN DE REGLAS CRÍTICAS --- */

@@ -31,13 +31,34 @@
 
 
 
-@media (min-width: 1024px) {
+
+
+@media (min-width: 464px) {
   
-.gearButton {
-  bottom: 60px;
-  right: 140px;
-  width: 70px;
-  height: 70px;
-}
-}
- 
+  .gearButton {
+    bottom: 9px;
+    right: 26px;
+    width: 70px;
+    height: 70px;
+  }
+  }
+
+  @media (min-width: 500px) {
+  
+    .gearButton {
+      bottom: 9px;
+      right: 58px;
+      width: 70px;
+      height: 70px;
+    }
+    }
+    @media (min-width: 1024px) {
+  
+      .gearButton {
+        bottom: 60px;
+        right: 150px;
+        width: 70px;
+        height: 70px;
+      }
+      }
+       
