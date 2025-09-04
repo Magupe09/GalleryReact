@@ -1,6 +1,6 @@
 
 .terminalContainer {
-    background-color: white; /* Fondo oscuro y profundo, como una terminal real */
+    background-color: #477998; /* Fondo oscuro y profundo, como una terminal real */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 190, 255, 0.3); /* Sombra de brillo azul sutil y profesional */
     font-family: 'Consolas', 'Monaco', monospace; /* Fuente monoespaciada para look de terminal */
@@ -57,7 +57,7 @@
   .terminalMessages {
     flex-grow: 1;
     /* --- CLAVE PARA EL DESBORDE --- */
-    max-height: 200px; /* Altura máxima para el historial de mensajes */
+    max-height: 189px; /* Altura máxima para el historial de mensajes */
     overflow-y: auto;  /* Habilita el scroll vertical si el contenido excede max-height */
     /* ------------------------------ */
     margin-bottom: 10px;
@@ -88,12 +88,13 @@
   
   .userMessage {
     color: black; /* Mensajes del usuario en blanco suave */
-    background-color: white;
+    background-color: #F64740;
+    border-radius: 5px;
   }
   
   .aiMessage {
-    color: white; /* Mensajes de la IA en un verde más natural/profesional */
-    background-color: black;
+    color: black; /* Mensajes de la IA en un verde más natural/profesional */
+    background-color: #FAFF81;
     border-radius: 5px;
   }
   
@@ -128,7 +129,7 @@
     padding: 5px 0;
     margin-left: 8px; /* Espacio aumentado */
     caret-color: black; /* Color del cursor parpadeante (verde de la IA) */
-    width: 100px;
+    width: 120px;
   }
   
   .terminalInput::placeholder {
@@ -157,10 +158,16 @@
     cursor: not-allowed;
     opacity: 0.7;
   }
+
+  @media (min-width: 400px) {
+    
+  .terminalInput {
+    width: 90px;
+  }
+  }
   
 
 
-  
 @media (min-width: 1024px) {
   
   .terminalContainer {
@@ -186,4 +193,5 @@
     border-radius: 5px;
   }
   
+ 
 }

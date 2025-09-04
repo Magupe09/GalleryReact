@@ -22,9 +22,10 @@ body {
 * {
   outline: 1px solid rgba(255, 0, 0, 0.3);
 }
-
- Asegura que el div donde se monta tu aplicación React (#root) también se extienda */
+  
+/*Asegura que el div donde se monta tu aplicación React (#root) también se extienda */
 #root {
+
   width: 100%;
   height: 100%;     /* ¡CRÍTICO! También debe ocupar el 100% de la altura del body */
   min-height: 100%; /* Permite que #root crezca para contener todo el contenido */
@@ -32,6 +33,13 @@ body {
   flex-direction: column; /* Organiza los hijos en columna 
   overflow-y: auto; 
   overflow-x: hidden;*/
+}
+:root {
+  --color-primary: #FAFF81;
+  --color-secondary: #000000;
+  --color-accent: #161032;
+  --color-text-light: #477998;
+  --color-text-vermilion: #F64740;
 }
 
 /* --- FIN DE REGLAS CRÍTICAS --- */
