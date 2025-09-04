@@ -38,7 +38,7 @@
   
   .terminalTitle {
     color: white; /* Título en un gris más tenue */
-    font-size: 1em;
+    font-size: 0.7rem;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
