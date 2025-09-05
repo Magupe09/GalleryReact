@@ -51,6 +51,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 5px;
    
   }
   
@@ -65,25 +66,29 @@
     font-size: 0.95em; /* Tamaño de fuente ligeramente más grande para mensajes */
     line-height: 1.5; /* Interlineado para mejor legibilidad */
     word-wrap: break-word; /* Asegura que las palabras largas se rompan y no desborden */
+    border-radius: 5px;
    
   }
   
   /* Estilo para el scrollbar (Webkit) */
   .terminalMessages::-webkit-scrollbar {
-    width: 10px;
+    width: 18px;
     
   }
   .terminalMessages::-webkit-scrollbar-track {
-    background: #FCFCFC; /* Fondo del track del scrollbar */
+    background: var(--color-primary); /* Fondo del track del scrollbar */
     border-radius: 100px;
+    
    
   }
   .terminalMessages::-webkit-scrollbar-thumb {
     background: #30363d; /* Color del thumb del scrollbar */
     border-radius: 100px;
+    width:100px;
   }
   .terminalMessages::-webkit-scrollbar-thumb:hover {
     background: #444c56; /* Color al pasar el ratón */
+
   }
   
   .userMessage {
@@ -116,6 +121,7 @@
    
     padding-top: 10px;
     width: 200px;
+    background-color: var(--color-text-light);
   }
   
   .terminalInput {
@@ -123,7 +129,7 @@
     background-color: transparent;
     border: none;
     outline: none;
-    color: black; /* Color de texto del input en blanco suave */
+    color: wheat; /* Color de texto del input en blanco suave */
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 0.95em;
     padding: 5px 0;
@@ -171,7 +177,7 @@
 @media (min-width: 1024px) {
   
   .terminalContainer {
-    background-color: white; /* Fondo oscuro y profundo, como una terminal real */
+    background-color: var(--color-secondary); /* Fondo oscuro y profundo, como una terminal real */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 170, 255, 0.3); /* Sombra de brillo azul sutil y profesional */
     font-family: 'Consolas', 'Monaco', monospace; /* Fuente monoespaciada para look de terminal */

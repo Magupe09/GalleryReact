@@ -94,16 +94,22 @@ function App() {
           </div>
           {/* Segunda columna: Contenedor para los dos hijos restantes */}
           <div className={styles.column2}>
-            {/* --- AI TERMINAL ---*/}
-            <div className={styles.aiTerminalContainer}>
-              <AITerminal />
-            </div>
+           
             {/* --- MANIFIESTO (opcional, al final) --- */}
             <div className={styles.manifestoBlock}>
               <DynamicManifest
                 phrases={manifestoPhrases} // Le pasamos las frases
               />
             </div>
+             {/* --- AI TERMINAL ---*/}
+            <div className={styles.aiTerminalContainer}>
+              <AITerminal />
+            </div>
+
+            
+
+
+
 
             {/* --- GEAR MENU --- */}
             <div className={styles.gearMenuContainer}>

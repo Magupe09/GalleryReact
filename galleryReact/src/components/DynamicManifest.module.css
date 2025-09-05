@@ -3,7 +3,7 @@
     /* Define una altura fija para evitar saltos de layout cuando las frases se apilan. */
     /* Ajusta esta altura según el número de frases y su font-size/line-height. */
     /* Por ejemplo, 4 frases * 35px de desplazamiento Y = 140px, más un poco de padding. */
-    height: 150px;
+    height: 90px;
     /* Ajusta según sea necesario */
     width: 100%;
     position: relative;

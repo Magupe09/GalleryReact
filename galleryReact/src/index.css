@@ -3,19 +3,22 @@
 
 /* --- REGLAS CRÍTICAS PARA EL SCROLL --- */
 /* Asegura que HTML y BODY ocupen el 100% de la altura de la ventana */
+* {
+  box-sizing: border-box; /* ← IMPORTANTE: Evita problemas de sizing */
+}
 html {
   /* No le des height/min-height al html, deja que crezca con el body */
-  height: 100%;
+  
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0; 
   padding: 0; 
-  width: 100vw;
-  height: 100vh;
-  /* CRÍTICO: oculta el overflow en el body para que el scroll lo maneje el #root */
- /* overflow: hidden; */
+  width: 100%; 
+  min-height: 100vh; 
+ 
 }
   
 /*
@@ -27,12 +30,11 @@ body {
 #root {
 
   width: 100%;
-  height: 100%;     /* ¡CRÍTICO! También debe ocupar el 100% de la altura del body */
-  min-height: 100%; /* Permite que #root crezca para contener todo el contenido */
+  min-height: 100vh;
   display: flex;    /* Asegura que #root use flexbox para que su hijo principal se estire */
-  flex-direction: column; /* Organiza los hijos en columna 
-  overflow-y: auto; 
-  overflow-x: hidden;*/
+  flex-direction: column; 
+   
+  overflow-x: hidden;
 }
 :root {
   --color-primary: #FAFF81;
@@ -44,16 +46,3 @@ body {
 
 /* --- FIN DE REGLAS CRÍTICAS --- */
 
-/* Estilos base para el body y la fuente */
-body {
-  font-family: 'Inter', sans-serif; /* Aplica la fuente global */
-  background-color: #0d0d0d; /* Un fondo general para todo el body */
-  color: #f0f0f0; /* Color de texto por defecto para toda la app */
-}
-
-/* Puedes añadir aquí otros estilos globales que no pertenezcan a un componente específico */
-
-/* Scroll suave solo para navegación manual (no automática) */
-html {
-  scroll-behavior: smooth;
-}
