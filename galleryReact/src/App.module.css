@@ -17,11 +17,12 @@
   
   position: relative;
 
-  background-color: var(--color-primary);
+  background-color: var(--color-text-light);
   display: flex;
   flex-direction: column;
   
   margin: 5px auto;
+ 
 }
 
 .heroSection {
@@ -33,9 +34,9 @@
   flex-wrap: wrap;
   padding: 1px 13px;
  
- 
+  overflow-x: hidden;
   box-sizing: border-box;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   gap: 4px;
  
 
