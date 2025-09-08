@@ -135,7 +135,7 @@
     padding: 5px 0;
     margin-left: 8px; /* Espacio aumentado */
     caret-color: black; /* Color del cursor parpadeante (verde de la IA) */
-    width: 90px;
+    width: 96px;
   }
   
   .terminalInput::placeholder {

@@ -8,12 +8,12 @@
 * {
   outline: 1px solid red;
 }
-   */
+  
    * {
     outline: 1px solid rgba(255, 0, 0, 0.3);
     overflow: visible !important;
   }
-
+ */
 
 .mainContainer {
  
@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  margin: 8px;
+  margin: 15px;
  
 }
 
@@ -54,6 +54,11 @@
 .column1{
   display: flex;
   flex-direction: column;
+}
+.column2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .rightColumnGrid { 
   position: relative;
@@ -109,7 +114,7 @@
   max-width: 400px;
   
   text-align: center;
-  font-size: 0.55em;
+  font-size: 0.6em;
   line-height: 1.6;
   padding-left:20px;
   margin-top: 0;
