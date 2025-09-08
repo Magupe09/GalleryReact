@@ -53,7 +53,12 @@
     line-height: 1.2;
     /* Ajusta el interlineado para el apilamiento */
 }
-
+@media (min-width: 650px){
+    .dynamicManifestContainer {
+        /* Ajusta según sea necesario */
+        width: 120%;
+    }
+}
 
 @media (min-width: 1024px){
 
@@ -62,4 +67,5 @@
     margin-left: -1px;
     margin-top: -29px;
     }
+    
 }

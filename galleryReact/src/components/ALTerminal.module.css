@@ -135,7 +135,7 @@
     padding: 5px 0;
     margin-left: 8px; /* Espacio aumentado */
     caret-color: black; /* Color del cursor parpadeante (verde de la IA) */
-    width: 96px;
+    width: 110px;
   }
   
   .terminalInput::placeholder {
@@ -168,10 +168,23 @@
   @media (min-width: 400px) {
     
   .terminalInput {
-    width: 90px;
+    width: 140px;
   }
   }
-  
+
+
+  @media (min-width: 650px) {
+    .terminalInputForm {
+      display: flex;
+      align-items: center;
+     
+      padding-top: 10px;
+      width: 342px;
+      background-color: var(--color-text-light);
+    }
+   
+  }
+    
 
 
 @media (min-width: 1024px) {
