@@ -119,7 +119,7 @@
 .heroTitle,
 .heroSubtitle {
   font-family: 'Inter', sans-serif;
-  color: #fff;
+  color: #A300FF;
   text-align: center;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
@@ -134,13 +134,13 @@
 .heroSubtitle {
   font-size: 1.4em;
   font-weight: 600;
-  color: #ccc;
+  color: white;
 }
 
 .heroDescription {
   font-size: 3em;
   font-weight: 400;
-  color: #e0e0e0;
+  color: #39FF14;
   margin-top: 1em;
   max-width: 90%;
   line-height: 1.6;

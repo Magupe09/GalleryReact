@@ -56,7 +56,7 @@ function App() {
 
 useEffect(() => {
   // Solo inicia la animación después de que la página esté completamente cargada
-  const timer = setTimeout(() => setShowAnimation(true), 300);
+  const timer = setTimeout(() => setShowAnimation(true), 600);
   return () => clearTimeout(timer);
 }, []);
 

@@ -45,7 +45,7 @@
     font-weight: 700;
     /* Usamos un peso de fuente audaz para Passion One */
     /* -------------------------------------------------- */
-    color: #e0e0e0;
+    color: #FF7F00;
     /* Color de texto */
     white-space: nowrap;
     /* Evita que las frases se rompan en varias líneas */
@@ -66,6 +66,7 @@
     /*  background-color: violet;*/
     margin-left: -1px;
     margin-top: -29px;
+    color: #39FF14;
     }
     
 }
