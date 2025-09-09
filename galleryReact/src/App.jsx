@@ -38,6 +38,9 @@ function App() {
   // Referencia para la primera sección (Hero Section) para el scroll del engranaje
   const heroSectionRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
+
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -49,6 +52,16 @@ function App() {
     console.log('Estado del modal (isModalOpen):', isModalOpen);
   }, [isModalOpen]);
   // <<< FIN NUEVO >>
+  
+
+useEffect(() => {
+  // Solo inicia la animación después de que la página esté completamente cargada
+  const timer = setTimeout(() => setShowAnimation(true), 300);
+  return () => clearTimeout(timer);
+}, []);
+
+
+
 
   return (
     <div className={styles.mainContainer}>
@@ -74,12 +87,16 @@ function App() {
           <div className={styles.column1}>
             {/* --- TÍTULO PRINCIPAL --- */}
             <div className={styles.titleBlock}>
-              <AnimatedText
-                text="MagupeDev"
-                className={styles.heroTitle}
-                type="char"
-                delay={0.03}
-              />
+              {showAnimation ? (
+                <AnimatedText
+                  text="MagupeDev"
+                  className={styles.heroTitle}
+                  type="char"
+                  delay={0.03}
+                />
+              ) : (
+                <div className={styles.heroTitle}>MagupeDev</div>
+              )}
             </div>
 
             {/* --- SUBTÍTULO --- */}
@@ -94,19 +111,19 @@ function App() {
           </div>
           {/* Segunda columna: Contenedor para los dos hijos restantes */}
           <div className={styles.column2}>
-           
+
             {/* --- MANIFIESTO (opcional, al final) --- */}
             <div className={styles.manifestoBlock}>
               <DynamicManifest
                 phrases={manifestoPhrases} // Le pasamos las frases
               />
             </div>
-             {/* --- AI TERMINAL ---*/}
+            {/* --- AI TERMINAL ---  */}
             <div className={styles.aiTerminalContainer}>
               <AITerminal />
             </div>
+          
 
-            
 
 
 

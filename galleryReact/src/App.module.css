@@ -63,14 +63,13 @@
 }
 
 .titleBlock {
-  display: inline-flex;
+  display: flex;              /* ← CAMBIO: flex en lugar de inline-flex */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
- 
+  align-items: center;        /* ← Centra horizontalmente */
+  justify-content: center;    /* ← Centra verticalmente */
   margin-top: 0px;
-  width: 212px;
   margin-bottom: 5px;
+  width: 100%;
   
 }
 
@@ -113,7 +112,7 @@
   text-align: center;
   font-size: 0.6em;
   line-height: 1.6;
-  padding-left:25px;
+  padding-left: 30px;
   margin-top: 0;
 }
 
@@ -127,13 +126,14 @@
 }
 
 .heroTitle {
-  font-size: 1.2em;
+  font-size: 1.8em;
   font-weight: 700;
+ 
 }
 
 .heroSubtitle {
-  font-size: 0.9em;
-  font-weight: 300;
+  font-size: 1.4em;
+  font-weight: 600;
   color: #ccc;
 }
 
