@@ -33,11 +33,11 @@ body {
   min-height: 100vh;
   display: flex;    /* Asegura que #root use flexbox para que su hijo principal se estire */
   flex-direction: column; 
-   
+  background-color: var(--color-primary);
   overflow-x: hidden;
 }
 :root {
-  --color-primary: #FAFF81;
+  --color-primary: white;
   --color-secondary: #000000;
   --color-accent: #161032;
   --color-text-light: #477998;
